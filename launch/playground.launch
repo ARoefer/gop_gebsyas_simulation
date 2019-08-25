@@ -6,6 +6,7 @@
   <arg name="debug" default="false"/>
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
+  <arg name="giskard"  default="false"/>
 
   <!-- Start Gazebo with a blank world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -15,9 +16,12 @@
     <arg name="use_sim_time" value="true"/>
     <arg name="headless" value="$(arg headless)"/>
     <arg name="world_name" value="$(find fetch_gazebo)/worlds/test_zone.sdf"/>
+    <!--arg name="extra_gazebo_args" value="/odom:=/misdirected_odom"/-->
   </include>
 
   <!-- Oh, you wanted a robot? -->
-  <include file="$(find gop_gebsyas_simulation)/launch/include/$(arg robot).launch.xml" />
+  <include file="$(find gop_gebsyas_simulation)/launch/include/$(arg robot).launch.xml">
+    <arg name="giskard" value="$(arg giskard)"/>
+  </include>
 
 </launch>
