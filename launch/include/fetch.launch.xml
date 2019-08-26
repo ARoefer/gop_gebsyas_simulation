@@ -7,8 +7,9 @@
   <arg name="giskard" default="false"/>
 
   <!-- Setup controllers -->
-  <rosparam file="$(find gop_gebsyas_simulation)/config/controllers.yaml" command="load" if="$(arg giskard)"/>
-  <rosparam file="$(find fetch_gazebo)/config/default_controllers.yaml" command="load" unless="$(arg giskard)"/>
+  <rosparam file="$(find gop_gebsyas_simulation)/config/controllers.yaml" command="load"/> 
+  <!-- if="$(arg giskard)"/>
+  <rosparam file="$(find fetch_gazebo)/config/default_controllers.yaml" command="load" unless="$(arg giskard)"/> -->
 
   <!-- URDF and TF support -->
   <param name="robot_description" command="$(find xacro)/xacro.py $(find fetch_gazebo)/robots/fetch.gazebo.xacro" />
@@ -19,7 +20,7 @@
   <!-- Put a robot in gazebo, make it look pretty -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
         args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -Y $(arg yaw) -model fetch -param robot_description"/>
-  <node name="prepare_robot" pkg="fetch_gazebo" type="prepare_simulated_robot.py" />
+  <node name="prepare_robot" pkg="gop_gebsyas_simulation" type="prepare_simulated_robot.py" />
 
   <!-- Give this robot a serial number and version -->
   <param name="robot/serial" value="ABCDEFGHIJKLMNOPQRSTUVWX" />
