@@ -11,27 +11,23 @@ from gebsyas.utils import real_quat_from_matrix
 from gazebo_msgs.msg import ModelStates as ModelStatesMsg
 
 robot_name = None
-base_link        = None
-tf_broadcaster   = None
-tf_listener      = None
+base_link      = None
+tf_broadcaster = None
+tf_listener    = None
+map_trans      = None  
+map_quat       = None
 
 
 def cb_states(states_msg):
+    global map_trans, map_quat
     try:
         idx = states_msg.name.index(robot_name)
         pose = states_msg.pose[idx]
 
-        trans_base_odom, quat_base_odom = tf_listener.lookupTransform('/odom', base_link, rospy.Time(0))
-        base_in_odom = frame3_quaternion(*(trans_base_odom + quat_base_odom))
-        base_in_map  = frame3_quaternion(pose.position.x, pose.position.y, 0, pose.orientation.x, pose.orientation.y, pose.orientation.z, pose.orientation.w)
-        map_in_odom = base_in_odom * inverse_frame(base_in_map)
-        odom_in_map = inverse_frame(map_in_odom)
+        map_base_link = inverse_frame(frame3_quaternion(pose.position.x, pose.position.y, 0, pose.orientation.x, pose.orientation.y, pose.orientation.z, pose.orientation.w))
 
-        tf_broadcaster.sendTransform(odom_in_map[:3, 3],
-                                     real_quat_from_matrix(odom_in_map),
-                                     rospy.Time.now(),
-                                      'odom',
-                                      'map')
+        map_trans = map_base_link[:3, 3]
+        map_quat  = real_quat_from_matrix(map_base_link)
     except (ValueError, tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):
         pass
 
@@ -51,10 +47,12 @@ if __name__ == '__main__':
     sub_state = rospy.Subscriber('/gazebo/model_states', ModelStatesMsg, callback=cb_states, queue_size=1)
 
     while not rospy.is_shutdown():
-        try:
-            rospy.sleep(1000)
-        except rospy.exceptions.ROSInterruptException:
-            pass
+        if map_trans is not None and map_quat is not None:
+            tf_broadcaster.sendTransform(map_trans,
+                                         map_quat,
+                                         rospy.Time.now(),
+                                         'map',
+                                         base_link)
 
     sub_state.unregister()
 

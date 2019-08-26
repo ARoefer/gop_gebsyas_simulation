@@ -33,6 +33,8 @@
   </include>
 
   <!-- tilt the head -->
-  <node pkg="fetch_navigation" type="tilt_head.py" name="tilt_head_node" />
+  <!--node pkg="fetch_navigation" type="tilt_head.py" name="tilt_head_node" /-->
+
+  <node pkg="gebsyas" type="go_to_view_pose.py" name="go_to_view_pose"/>
 
 </launch>
