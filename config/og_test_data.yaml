@@ -1,0 +1,16 @@
+object_data:
+  - name: pringles
+    min_observation_distance: 0.5
+    max_observation_distance: 1.6
+  - name: coke
+    min_observation_distance: 0.4
+    max_observation_distance: 1.2
+  - name: bucket
+    min_observation_distance: 0.5
+    max_observation_distance: 2.0
+location_data:
+  - [0.48, 1.64, 0.9]
+  - [1.86, -0.96, 1.0]
+  - [-1.64, 1.43, 0.9]
+  - [-0.93, -0.5, 1.0]
+  - [-0.93, -1.5, 1.0]
