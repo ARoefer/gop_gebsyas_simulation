@@ -1,19 +1,11 @@
-fetch:
-  joint_velocity_controller:
-    type: "robot_controllers/VelocityController"
-    watchdog_period: 0.1
-    joints:
-      - torso_lift_joint
-      - shoulder_pan_joint
-      - shoulder_lift_joint
-      - upperarm_roll_joint
-      - elbow_flex_joint
-      - forearm_roll_joint
-      - wrist_flex_joint
-      - wrist_roll_joint
-      - head_pan_joint
-      - head_tilt_joint
-    autostart: true
+joint_position_controller:
+  type: "robot_controllers/PositionController"
+  watchdog_period: 2.0
+  joints:
+    - torso_lift_joint
+    - head_pan_joint
+    - head_tilt_joint
+  autostart: true
 
 base_controller:
   type: "robot_controllers/DiffDriveBaseController"
@@ -27,17 +19,48 @@ base_controller:
   # use laser to only slowly collide with things
   laser_safety_dist: 1.0
 
-gravity_compensation:
-  type: "robot_controllers/GravityCompensation"
-  root: "torso_lift_link"
-  tip: "gripper_link"
+arm_controller:
+  follow_joint_trajectory:
+    type: "robot_controllers/FollowJointTrajectoryController"
+    joints:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - upperarm_roll_joint
+      - elbow_flex_joint
+      - forearm_roll_joint
+      - wrist_flex_joint
+      - wrist_roll_joint
+  gravity_compensation:
+    type: "robot_controllers/GravityCompensation"
+    root: "torso_lift_link"
+    tip: "gripper_link"
+    autostart: true
+
+gripper_controller:
+  gripper_action:
+    type: "robot_controllers/ParallelGripperController"
+    centering:
+      p: 1000.0
+      d: 0.0
+      i: 0.0
+      i_clamp: 0.0
+
+bellows_controller:
+  type: "robot_controllers/ScaledMimicController"
+  mimic_joint: "torso_lift_joint"
+  controlled_joint: "bellows_joint"
+  mimic_scale: 0.5
   autostart: true
+
 
 gazebo:
   default_controllers:
-    - "fetch/joint_velocity_controller"
+    - "joint_position_controller"
+    - "arm_controller/follow_joint_trajectory"
+    - "arm_controller/gravity_compensation"
     - "base_controller"
-    - "gravity_compensation"
+    - "gripper_controller/gripper_action"
+    - "bellows_controller"
   l_wheel_joint:
     position:
       p: 0.0
