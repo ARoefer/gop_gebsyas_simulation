@@ -6,7 +6,6 @@
   <arg name="debug" default="false"/>
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
-  <arg name="giskard"  default="false"/>
 
   <!-- Start Gazebo with a blank world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -20,8 +19,6 @@
   </include>
 
   <!-- Oh, you wanted a robot? -->
-  <include file="$(find gop_gebsyas_simulation)/launch/include/$(arg robot).launch.xml">
-    <arg name="giskard" value="$(arg giskard)"/>
-  </include>
+  <include file="$(find gop_gebsyas_simulation)/launch/include/$(arg robot).launch.xml"/>
 
 </launch>

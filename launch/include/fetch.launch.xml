@@ -4,12 +4,9 @@
   <arg name="y" default="0.0" />
   <arg name="z" default="0.0" />
   <arg name="yaw" default="0.0" />
-  <arg name="giskard" default="false"/>
 
   <!-- Setup controllers -->
   <rosparam file="$(find gop_gebsyas_simulation)/config/controllers.yaml" command="load"/> 
-  <!-- if="$(arg giskard)"/>
-  <rosparam file="$(find fetch_gazebo)/config/default_controllers.yaml" command="load" unless="$(arg giskard)"/> -->
 
   <!-- URDF and TF support -->
   <param name="robot_description" command="$(find xacro)/xacro.py $(find fetch_gazebo)/robots/fetch.gazebo.xacro" />
