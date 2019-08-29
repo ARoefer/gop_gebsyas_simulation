@@ -15,7 +15,7 @@
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="headless" value="$(arg headless)"/>
-    <arg name="world_name" value="$(find fetch_gazebo)/worlds/test_zone.sdf"/>
+    <arg name="world_name" value="/home/logan/.ros/object_search_test1.sdf"/>
     <!--arg name="extra_gazebo_args" value="/odom:=/misdirected_odom"/-->
   </include>
 
