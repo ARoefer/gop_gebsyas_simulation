@@ -328,6 +328,7 @@ if __name__ == '__main__':
 
     rospy.init_node('fake_observation')
 
+    robot_name = rospy.get_param('~robot_name', 'fetch')
     width  = rospy.get_param('~width',  640)
     height = rospy.get_param('~height',  480)
     near   = rospy.get_param('~near',  0.2)
