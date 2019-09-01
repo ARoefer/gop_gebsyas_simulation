@@ -1,11 +1,19 @@
 <launch>
 
-  <env name="GAZEBO_MODEL_PATH" value="$(find fetch_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)" />
+  <env name="GAZEBO_MODEL_PATH" value="$(find fetch_gazebo)/models:$(find gop_gebsyas_simulation)/models/ycb_master_chef_can:$(optenv GAZEBO_MODEL_PATH)" />
 
+  <arg name="sdf_file" default="icra_room3.sdf" doc="World file to load. Must be located in gop_gebsyas_simulation/sdf"/>
   <arg name="robot" default="fetch"/>
   <arg name="debug" default="false"/>
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
+
+  <arg name="robot_name" default="fetch" doc="Name of the robot in Gazebo"/>
+  <arg name="width"      default="640" doc="Image width of camera"/>
+  <arg name="height"     default="480" doc="Image height of camera"/>
+  <arg name="near"       default="0.2" doc="Near plane of the camera"/>
+  <arg name="far"        default="7.0" doc="Far plane of the camera"/>
+  <arg name="fov"        default="60"  doc="Field of view of the camer in degrees"/>
 
   <!-- Start Gazebo with a blank world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -14,11 +22,20 @@
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="headless" value="$(arg headless)"/>
-    <arg name="world_name" value="$(find gop_gebsyas_simulation)/sdf/icra_room3.sdf"/>
+    <arg name="world_name" value="$(find gop_gebsyas_simulation)/sdf/$(arg sdf_file)"/>
     <!--arg name="extra_gazebo_args" value="/odom:=/misdirected_odom"/-->
   </include>
 
   <!-- Oh, you wanted a robot? -->
   <include file="$(find gop_gebsyas_simulation)/launch/include/$(arg robot).launch.xml"/>
+
+  <node name="fake_observer" pkg="gop_gebsyas_simulation" type="fake_observer.py" args="$(find gop_gebsyas_simulation)/sdf/$(arg sdf_file)" output="screen">
+    <param name="robot_name" value="$(arg robot_name)"/>
+    <param name="width"      value="$(arg width)"/>
+    <param name="height"     value="$(arg height)"/>
+    <param name="near"       value="$(arg near)"/>
+    <param name="far"        value="$(arg far)"/>
+    <param name="fov"        value="$(arg fov)"/>
+  </node>
 
 </launch>
