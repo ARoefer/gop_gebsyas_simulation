@@ -11,7 +11,7 @@ from kineverse.utils       import res_pkg_path, real_quat_from_matrix
 from kineverse.bpb_wrapper import pb, create_object, create_cube_shape, create_sphere_shape, create_cylinder_shape, create_compound_shape, load_convex_mesh_shape, matrix_to_transform
 from kineverse.visualization.bpb_visualizer import ROSBPBVisualizer
 
-from gazebo_msgs.msg import ModelStates as ModelStatesMsg
+from gazebo_msgs.msg import LinkStates as LinkStatesMsg
 from faster_rcnn_object_detector.msg import ObjectInfo as ObjectInfoMsg
 from faster_rcnn_object_detector.srv import ImageToObject         as ImageToObjectSrv, \
                                             ImageToObjectResponse as ImageToObjectResponseMsg
@@ -81,7 +81,6 @@ far    = 7.0
 fov    = 54.5 * (np.pi / 180)
 right  = np.tan(0.5 * fov) * near
 top    = right * (height / float(width))
-pub_bbox = None 
 # self._projection_matrix = np.array([[near / r,        0,                            0,                                0],
 #                                     [       0, near / t,                            0,                                0],
 #                                     [       0,        0, (-far - near) / (far - near), (-2 * far * near) / (far - near)],
@@ -92,20 +91,36 @@ pub_bbox = None
 #                                     [1, 0, 0, 0], 
 #                                     [0, 0, 0, 1]]).dot(self._projection_matrix)
 # Primitive projection. Projects y into x, z into y- points in view should range from -0.5 to 0.5
-projection_matrix = np.array([[0, -1 / right,          0, 0],
-                              [0,            0, -1 / top, 0],
-                              [1 / near,     0,          0, 0]])
-screen_translation = np.array([[0.5 * width,            0, 0.5 * width],
-                               [          0, 0.5 * height, 0.5 * height]])
-frustum_vertices = np.array([[near, -right,  top, 1],
-                             [near, -right, -top, 1],
-                             [near,  right, -top, 1],
-                             [near,  right,  top, 1],
-                             [ far, -(right / near) * far,  (top / near) * far, 1],
-                             [ far, -(right / near) * far, -(top / near) * far, 1],
-                             [ far,  (right / near) * far, -(top / near) * far, 1],
-                             [ far,  (right / near) * far,  (top / near) * far, 1]])
-frustum_lines    = np.array([frustum_vertices[0], frustum_vertices[1], # tl to ll
+
+projection_matrix = None 
+screen_translation = None
+frustum_vertices = None
+frustum_lines    = None
+aabb_vertex_template = np.array([[1, 1, 1, 1],
+                                 [1, 1, 0, 1],
+                                 [1, 0, 1, 1],
+                                 [1, 0, 0, 1],
+                                 [0, 1, 1, 1],
+                                 [0, 1, 0, 1],
+                                 [0, 0, 1, 1],
+                                 [0, 0, 0, 1]]) + np.array([-0.5, -0.5, -0.5, 0])
+
+def generate_matrices():
+    global projection_matrix, screen_translation, frustum_vertices, frustum_lines
+    projection_matrix = np.array([[0, -1 / right,          0, 0],
+                                  [0,            0, -1 / top, 0],
+                                  [1 / near,     0,          0, 0]])
+    screen_translation = np.array([[0.5 * width,            0, 0.5 * width],
+                                   [          0, 0.5 * height, 0.5 * height]])
+    frustum_vertices = np.array([[near, -right,  top, 1],
+                                 [near, -right, -top, 1],
+                                 [near,  right, -top, 1],
+                                 [near,  right,  top, 1],
+                                 [ far, -(right / near) * far,  (top / near) * far, 1],
+                                 [ far, -(right / near) * far, -(top / near) * far, 1],
+                                 [ far,  (right / near) * far, -(top / near) * far, 1],
+                                 [ far,  (right / near) * far,  (top / near) * far, 1]])
+    frustum_lines    = np.array([frustum_vertices[0], frustum_vertices[1], # tl to ll
                              frustum_vertices[0], frustum_vertices[3], # tl to tr
                              frustum_vertices[0], frustum_vertices[4],
                              frustum_vertices[1], frustum_vertices[5], 
@@ -118,15 +133,8 @@ frustum_lines    = np.array([frustum_vertices[0], frustum_vertices[1], # tl to l
                              frustum_vertices[6], frustum_vertices[7],
                              frustum_vertices[6], frustum_vertices[5]
                              ]).T
-frustum_vertices = frustum_vertices.T
-aabb_vertex_template = np.array([[1, 1, 1, 1],
-                                 [1, 1, 0, 1],
-                                 [1, 0, 1, 1],
-                                 [1, 0, 0, 1],
-                                 [0, 1, 1, 1],
-                                 [0, 1, 0, 1],
-                                 [0, 0, 1, 1],
-                                 [0, 0, 0, 1]]) + np.array([-0.5, -0.5, -0.5, 0])
+    frustum_vertices = frustum_vertices.T
+
 
 def fake_observation():
     visualizer.begin_draw_cycle('frustum', 'aabbs')
@@ -292,6 +300,15 @@ if __name__ == '__main__':
 
     rospy.init_node('fake_observation')
 
+    width  = rospy.get_param('~width',  640)
+    height = rospy.get_param('~height',  480)
+    near   = rospy.get_param('~near',  0.2)
+    far    = rospy.get_param('~far',  7.0)
+    fov    = rospy.get_param('~fov',  54.5)
+    right  = np.tan(0.5 * fov) * near
+    top    = right * (height / float(width))
+    generate_matrices()
+
     tf_listener = tf.TransformListener()
 
     visualizer = ROSBPBVisualizer('/observation_vis', 'map')
@@ -316,12 +333,13 @@ if __name__ == '__main__':
                 else:
                     raise Exception('Unrecognized geometry type in collision of link {}. Type is "{}"'.format(str(key), c.type))
             obj = create_object(shape)
-            phy_objects[str(n[2:-1])] = obj
+            phy_objects['::'.join(n[2:])] = obj
             world.add_collision_object(obj)
+            obj.transform = matrix_to_transform(l.pose)
     inv_phy_obj = {o: n for n, o in phy_objects.items()}
 
     print('Loaded objects: {}'.format(phy_objects.keys()))
-    sub_states = rospy.Subscriber('/gazebo/model_states', ModelStatesMsg, cb_model_states, queue_size=1)
+    sub_states = rospy.Subscriber('/gazebo/link_states', LinkStatesMsg, cb_model_states, queue_size=1)
     srv_server = rospy.Service('/image_to_object', ImageToObjectSrv, srv_image_to_object)
 
     while not rospy.is_shutdown():
