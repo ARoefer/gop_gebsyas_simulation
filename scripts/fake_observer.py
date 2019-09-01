@@ -11,13 +11,15 @@ from kineverse.utils       import res_pkg_path, real_quat_from_matrix
 from kineverse.bpb_wrapper import pb, create_object, create_cube_shape, create_sphere_shape, create_cylinder_shape, create_compound_shape, load_convex_mesh_shape, matrix_to_transform
 from kineverse.visualization.bpb_visualizer import ROSBPBVisualizer
 
-from gazebo_msgs.msg import LinkStates as LinkStatesMsg
+from gazebo_msgs.msg import LinkStates  as LinkStatesMsg, \
+                            ModelStates as ModelStatesMsg
 from faster_rcnn_object_detector.msg import ObjectInfo as ObjectInfoMsg
 from faster_rcnn_object_detector.srv import ImageToObject         as ImageToObjectSrv, \
                                             ImageToObjectResponse as ImageToObjectResponseMsg
 
 phy_objects = {}
 inv_phy_obj = {}
+phy_to_label = {}
 world       = None
 tf_listener = None
 camera_base_tf = np.eye(4)
@@ -43,35 +45,41 @@ def cb_model_states(states_msg):
     global base_tf, camera_base_tf, robot_name
 
     for n, p in zip(states_msg.name, states_msg.pose):
-        if n in phy_objects:
-            phy_objects[n].transform = pb.Transform(pb.Quaternion(p.orientation.x, 
-                                                                  p.orientation.y, 
-                                                                  p.orientation.z, 
-                                                                  p.orientation.w), 
-                                                     pb.Vector3(p.position.x,
-                                                                p.position.y,
-                                                                p.position.z))
-        elif n == robot_name:
-            base_tf = tf_to_np(pb.Transform(pb.Quaternion(p.orientation.x, 
-                                                                  p.orientation.y, 
-                                                                  p.orientation.z, 
-                                                                  p.orientation.w), 
+        if n == robot_name:
+            base_tf = tf_to_np(pb.Transform(pb.Quaternion(p.orientation.x,
+                                                                  p.orientation.y,
+                                                                  p.orientation.z,
+                                                                  p.orientation.w),
                                                      pb.Vector3(p.position.x,
                                                                 p.position.y,
                                                                 p.position.z)))
-
-    world.update_aabbs()
-    visualizer.begin_draw_cycle()
-    visualizer.draw_world('objects', world)
     try:
-        trans, rot = tf_listener.lookupTransform('/base_link', '/head_camera_link', rospy.Time(0))
+        trans, rot = tf_listener.lookupTransform('/base_link', '/head_camera_rgb_optical_frame', rospy.Time(0))
         #print('{} {} {}\n{} {} {} {}'.format(trans[0], trans[1], trans[2], rot[0], rot[1], rot[2], rot[3]))
-        
+
         camera_base_tf = tf_to_np(pb.Transform(pb.Quaternion(*rot), pb.Vector3(*trans)))
         #fake_observation()
     except (ValueError, tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):
         pass
 
+
+def cb_link_states(states_msg):
+    global base_tf, camera_base_tf, robot_name
+
+    for n, p in zip(states_msg.name, states_msg.pose):
+        if n in phy_objects:
+            #print('Updating pose of {}'.format(n))
+            phy_objects[n].transform = pb.Transform(pb.Quaternion(p.orientation.x,
+                                                                  p.orientation.y,
+                                                                  p.orientation.z,
+                                                                  p.orientation.w),
+                                                     pb.Vector3(p.position.x,
+                                                                p.position.y,
+                                                                p.position.z))
+
+    world.update_aabbs()
+    visualizer.begin_draw_cycle()
+    visualizer.draw_world('objects', world)
     visualizer.render('objects')
 
 width  = 640
@@ -81,18 +89,19 @@ far    = 7.0
 fov    = 54.5 * (np.pi / 180)
 right  = np.tan(0.5 * fov) * near
 top    = right * (height / float(width))
+link_to_label = {}
 # self._projection_matrix = np.array([[near / r,        0,                            0,                                0],
 #                                     [       0, near / t,                            0,                                0],
 #                                     [       0,        0, (-far - near) / (far - near), (-2 * far * near) / (far - near)],
 #                                     [       0,        0,                           -1,                                0]])
 # # Project along x-axis to be aligned with the "x forwards" convention
-# self._projection_matrix = np.array([[0, 1, 0, 0], 
-#                                     [0, 0, 1, 0], 
-#                                     [1, 0, 0, 0], 
+# self._projection_matrix = np.array([[0, 1, 0, 0],
+#                                     [0, 0, 1, 0],
+#                                     [1, 0, 0, 0],
 #                                     [0, 0, 0, 1]]).dot(self._projection_matrix)
 # Primitive projection. Projects y into x, z into y- points in view should range from -0.5 to 0.5
 
-projection_matrix = None 
+projection_matrix = None
 screen_translation = None
 frustum_vertices = None
 frustum_lines    = None
@@ -107,23 +116,26 @@ aabb_vertex_template = np.array([[1, 1, 1, 1],
 
 def generate_matrices():
     global projection_matrix, screen_translation, frustum_vertices, frustum_lines
-    projection_matrix = np.array([[0, -1 / right,          0, 0],
-                                  [0,            0, -1 / top, 0],
-                                  [1 / near,     0,          0, 0]])
+    projection_matrix = np.array([[1 / right,       0,        0, 0],
+                                  [        0, 1 / top,        0, 0],
+                                  [        0,       0, 1 / near, 0]])
     screen_translation = np.array([[0.5 * width,            0, 0.5 * width],
                                    [          0, 0.5 * height, 0.5 * height]])
-    frustum_vertices = np.array([[near, -right,  top, 1],
+    frustum_vertices = np.array([[0,1,0,0],
+                                 [0,0,1,0],
+                                 [1,0,0,0],
+                                 [0,0,0,1]]).dot(np.array([[near, -right,  top, 1],
                                  [near, -right, -top, 1],
                                  [near,  right, -top, 1],
                                  [near,  right,  top, 1],
                                  [ far, -(right / near) * far,  (top / near) * far, 1],
                                  [ far, -(right / near) * far, -(top / near) * far, 1],
                                  [ far,  (right / near) * far, -(top / near) * far, 1],
-                                 [ far,  (right / near) * far,  (top / near) * far, 1]])
+                                 [ far,  (right / near) * far,  (top / near) * far, 1]]).T).T
     frustum_lines    = np.array([frustum_vertices[0], frustum_vertices[1], # tl to ll
                              frustum_vertices[0], frustum_vertices[3], # tl to tr
                              frustum_vertices[0], frustum_vertices[4],
-                             frustum_vertices[1], frustum_vertices[5], 
+                             frustum_vertices[1], frustum_vertices[5],
                              frustum_vertices[2], frustum_vertices[3],
                              frustum_vertices[2], frustum_vertices[1],
                              frustum_vertices[2], frustum_vertices[6],
@@ -137,12 +149,20 @@ def generate_matrices():
 
 
 def fake_observation():
+    if base_tf is None:
+        print('Can not generate observation, base_tf is None')
+        return []
+
+    if camera_base_tf is None:
+        print('Can not generate observation, camera_base_tf is None')
+        return []
+
     visualizer.begin_draw_cycle('frustum', 'aabbs')
     camera_tf = base_tf.dot(camera_base_tf)
     frustum   = camera_tf.dot(frustum_vertices)
     frust_min = frustum.min(axis=1)
     frust_max = frustum.max(axis=1)
-    frust_aabb_center = (frust_min + frust_max) * 0.5 
+    frust_aabb_center = (frust_min + frust_max) * 0.5
     visualizer.draw_lines('frustum', pb.Transform.identity(), 0.05, camera_tf.dot(frustum_lines).T.tolist())
     visualizer.draw_mesh('frustum', pb.Transform(frust_aabb_center[0], frust_aabb_center[1], frust_aabb_center[2]), (frust_max - frust_min), 'package://gebsyas/meshes/bounding_box.dae')
 
@@ -171,6 +191,7 @@ def fake_observation():
 
         corners_in_camera = i_camera_tf.dot(aabb_corners)
         projected_corners = projection_matrix.dot(corners_in_camera)
+        projected_corners[2,:] = np.abs(projected_corners[2,:]).clip(1e-12, 1e12)
         projected_corners = np.divide(projected_corners, projected_corners[2,:])
         screen_bb_min = projected_corners.min(axis=1)
         screen_bb_max = projected_corners.max(axis=1)
@@ -181,7 +202,7 @@ def fake_observation():
             pixel_bb_min = screen_translation.dot(screen_bb_min.clip(-1, 1))
             pixel_bb_max = screen_translation.dot(screen_bb_max.clip(-1, 1))
             print('Bounding box for object {}.\n  Min: {}\n  Max: {}'.format(inv_phy_obj[o], pixel_bb_min, pixel_bb_max))
-            bounding_boxes.append((i_camera_tf.dot(aabb_min + 0.5 * aabb_dim)[0], inv_phy_obj[o], pixel_bb_min, pixel_bb_max))    
+            bounding_boxes.append((i_camera_tf.dot(aabb_min + 0.5 * aabb_dim)[2], phy_to_label[o], pixel_bb_min, pixel_bb_max))
 
     min_box_width = 5
     visible_boxes = []
@@ -190,6 +211,13 @@ def fake_observation():
         for vlabel, vmin, vmax in visible_boxes:
             rmin = vmin - bmin
             rmax = vmax - bmax
+
+            if rmin.min() > 0 and rmax.max() < 0: # Max corner is outside of v-box
+                print('Box for {} is completely occluded.'.format(vlabel))
+            else:
+                new_visible_boxes.append((vlabel, vmin, vmax))
+
+            continue # AFTER THIS BOX CUTTING
 
             if rmin.min() > 0: # Min corner is outside v-box
                 if rmax.max() < 0: # Max corner is outside of v-box
@@ -265,9 +293,9 @@ def fake_observation():
             bboxes[label] = ObjectInfoMsg(label=label)
         msg = bboxes[label]
         msg.bbox_xmin.append(bmin[0])
-        msg.bbox_ymin.append(bmin[1]) 
+        msg.bbox_ymin.append(bmin[1])
         msg.bbox_xmax.append(bmax[0])
-        msg.bbox_ymax.append(bmax[1]) 
+        msg.bbox_ymax.append(bmax[1])
         msg.score.append(1.0)
 
     visualizer.render('frustum', 'aabbs')
@@ -304,7 +332,7 @@ if __name__ == '__main__':
     height = rospy.get_param('~height',  480)
     near   = rospy.get_param('~near',  0.2)
     far    = rospy.get_param('~far',  7.0)
-    fov    = rospy.get_param('~fov',  54.5)
+    fov    = rospy.get_param('~fov',  60) * (np.pi / 180)
     right  = np.tan(0.5 * fov) * near
     top    = right * (height / float(width))
     generate_matrices()
@@ -336,11 +364,13 @@ if __name__ == '__main__':
             phy_objects['::'.join(n[2:])] = obj
             world.add_collision_object(obj)
             obj.transform = matrix_to_transform(l.pose)
+            phy_to_label[obj] = str(n[2:-1])
     inv_phy_obj = {o: n for n, o in phy_objects.items()}
 
     print('Loaded objects: {}'.format(phy_objects.keys()))
-    sub_states = rospy.Subscriber('/gazebo/link_states', LinkStatesMsg, cb_model_states, queue_size=1)
-    srv_server = rospy.Service('/image_to_object', ImageToObjectSrv, srv_image_to_object)
+    sub_states = rospy.Subscriber('/gazebo/link_states', LinkStatesMsg, cb_link_states, queue_size=1)
+    sub_model_states = rospy.Subscriber('/gazebo/model_states', ModelStatesMsg, cb_model_states, queue_size=1)
+    srv_server = rospy.Service('/object_detection', ImageToObjectSrv, srv_image_to_object)
 
     while not rospy.is_shutdown():
         rospy.sleep(1000)
