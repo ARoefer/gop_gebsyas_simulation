@@ -610,7 +610,7 @@
       </link>
       <static>1</static>
     </model>
-    <model name='table2'>
+    <model name='cafe_table'>
       <static>1</static>
       <link name='link'>
         <collision name='surface'>
@@ -703,9 +703,9 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>333 767000000</sim_time>
-      <real_time>16 641775122</real_time>
-      <wall_time>1567179692 167341723</wall_time>
+      <sim_time>592 834000000</sim_time>
+      <real_time>301 250419387</real_time>
+      <wall_time>1567369452 69986725</wall_time>
       <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>
         <link name='link'>
@@ -796,7 +796,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='table2'>
+      <model name='cafe_table'>
         <pose>-8.95042 4.91807 0 0 -0 1.57</pose>
         <link name='link'>
           <pose>-8.95042 4.91807 0 0 -0 1.57</pose>
@@ -805,20 +805,26 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='ycb_master_chef_can'>
-        <pose>-8.96231 4.86512 0.773999 1.55575 -0.014212 -2.69515</pose>
+      <model name='master_chef_can'>
+        <pose>-8.92005 4.70715 0.8415 0 -1e-06 1e-06</pose>
         <link name='link'>
-          <pose>-8.96231 4.86512 0.773999 1.55575 -0.014212 -2.69515</pose>
+          <pose>-8.92005 4.70715 0.8415 0 -1e-06 1e-06</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
     </state>
-    <model name='ycb_master_chef_can'>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>23.7991 -13.1293 45.9957 0 0.885796 2.82024</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+    <model name='master_chef_can'>
       <link name='link'>
         <inertial>
-          <pose>0 0 0 -1.57 0 0</pose>
+          <pose>0 0 0 0 -0 0</pose>
           <mass>1</mass>
           <inertia>
             <ixx>0.00055575</ixx>
@@ -830,10 +836,10 @@
           </inertia>
         </inertial>
         <collision name='collision'>
-          <pose>0.05 0.05 0.05 0 -0 0</pose>
+          <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <box>
-              <size>0.1 0.1 0.1</size>
+              <size>0.11 0.11 0.135</size>
             </box>
           </geometry>
           <surface>
@@ -856,7 +862,7 @@
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='visual'>
-          <pose>0.003937 0.0047244 -0.18 0 -0 0</pose>
+          <pose>0.01 -0.015 -0.065 0 -0 0</pose>
           <geometry>
             <mesh>
               <uri>model://ycb_master_chef_can/meshes/textured.dae</uri>
@@ -871,14 +877,8 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
-      <pose>3.44624 3 0 0 -0 0</pose>
+      <pose>-8 4 0 0 -0 0</pose>
       <static>0</static>
     </model>
-    <gui fullscreen='0'>
-      <camera name='user_camera'>
-        <pose>11.0676 -17.591 30.8057 0 0.981796 1.90425</pose>
-        <view_controller>orbit</view_controller>
-      </camera>
-    </gui>
   </world>
 </sdf>
