@@ -11,8 +11,9 @@ from kineverse.utils       import res_pkg_path, real_quat_from_matrix
 from kineverse.bpb_wrapper import pb, create_object, create_cube_shape, create_sphere_shape, create_cylinder_shape, create_compound_shape, load_convex_mesh_shape, matrix_to_transform
 from kineverse.visualization.bpb_visualizer import ROSBPBVisualizer
 
-from gazebo_msgs.msg import LinkStates  as LinkStatesMsg, \
-                            ModelStates as ModelStatesMsg
+from geometry_msgs.msg import Point       as PointMsg
+from gazebo_msgs.msg   import LinkStates  as LinkStatesMsg, \
+                              ModelStates as ModelStatesMsg
 from faster_rcnn_object_detector.msg import ObjectInfo as ObjectInfoMsg
 from faster_rcnn_object_detector.srv import ImageToObject         as ImageToObjectSrv, \
                                             ImageToObjectResponse as ImageToObjectResponseMsg
@@ -202,20 +203,20 @@ def fake_observation():
             pixel_bb_min = screen_translation.dot(screen_bb_min.clip(-1, 1))
             pixel_bb_max = screen_translation.dot(screen_bb_max.clip(-1, 1))
             print('Bounding box for object {}.\n  Min: {}\n  Max: {}'.format(inv_phy_obj[o], pixel_bb_min, pixel_bb_max))
-            bounding_boxes.append((i_camera_tf.dot(aabb_min + 0.5 * aabb_dim)[2], phy_to_label[o], pixel_bb_min, pixel_bb_max))
+            bounding_boxes.append((i_camera_tf.dot(aabb_min + 0.5 * aabb_dim)[2], phy_to_label[o], pixel_bb_min, pixel_bb_max, aabb_min + 0.5 * aabb_dim))
 
     min_box_width = 5
     visible_boxes = []
-    for _, label, bmin, bmax in reversed(sorted(bounding_boxes)):
-        new_visible_boxes = [(label, bmin, bmax)]
-        for vlabel, vmin, vmax in visible_boxes:
+    for _, label, bmin, bmax, location in reversed(sorted(bounding_boxes)):
+        new_visible_boxes = [(label, bmin, bmax, location)]
+        for vlabel, vmin, vmax, vlocation in visible_boxes:
             rmin = vmin - bmin
             rmax = vmax - bmax
 
             if rmin.min() > 0 and rmax.max() < 0: # Max corner is outside of v-box
                 print('Box for {} is completely occluded.'.format(vlabel))
             else:
-                new_visible_boxes.append((vlabel, vmin, vmax))
+                new_visible_boxes.append((vlabel, vmin, vmax, location))
 
             continue # AFTER THIS BOX CUTTING
 
@@ -284,11 +285,11 @@ def fake_observation():
                             top_bar   = (vlabel, np.array([vmin[0], bmax[1]]), vmax)
                             new_visible_boxes.append(top_bar)
 
-        visible_boxes = [(vlabel, vmin, vmax) for vlabel, vmin, vmax in new_visible_boxes if (vmax - vmin).min() >= min_box_width]
+        visible_boxes = [(vlabel, vmin, vmax, vlocation) for vlabel, vmin, vmax, vlocation in new_visible_boxes if (vmax - vmin).min() >= min_box_width]
 
 
     bboxes = {}
-    for label, bmin, bmax in visible_boxes:
+    for label, bmin, bmax, location in visible_boxes:
         if label not in bboxes:
             bboxes[label] = ObjectInfoMsg(label=label)
         msg = bboxes[label]
@@ -296,6 +297,7 @@ def fake_observation():
         msg.bbox_ymin.append(bmin[1])
         msg.bbox_xmax.append(bmax[0])
         msg.bbox_ymax.append(bmax[1])
+        msg.location.append(PointMsg(x=location[0], y=location[1], z=location[2]))
         msg.score.append(1.0)
 
     visualizer.render('frustum', 'aabbs')
