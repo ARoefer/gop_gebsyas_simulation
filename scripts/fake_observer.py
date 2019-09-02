@@ -207,15 +207,17 @@ def fake_observation():
     min_box_width = 5
     visible_boxes = []
     for _, label, bmin, bmax in reversed(sorted(bounding_boxes)):
+        print(label, bmin, bmax)
         new_visible_boxes = [(label, bmin, bmax)]
+        print("visible box: ", visible_boxes)
         for vlabel, vmin, vmax in visible_boxes:
             rmin = vmin - bmin
             rmax = vmax - bmax
 
-            if rmin.min() > 0 and rmax.max() < 0: # Max corner is outside of v-box
-                print('Box for {} is completely occluded.'.format(vlabel))
-            else:
-                new_visible_boxes.append((vlabel, vmin, vmax))
+            # if rmin.min() > 0 and rmax.max() < 0: # Max corner is outside of v-box
+                # print('Box for {} is completely occluded.'.format(vlabel))
+            # else:
+            new_visible_boxes.append((vlabel, vmin, vmax))
 
             continue # AFTER THIS BOX CUTTING
 

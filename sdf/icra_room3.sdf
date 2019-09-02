@@ -610,7 +610,7 @@
       </link>
       <static>1</static>
     </model>
-    <model name='table2'>
+    <model name='cafe_table'>
       <static>1</static>
       <link name='link'>
         <collision name='surface'>
@@ -796,7 +796,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='table2'>
+      <model name='cafe_table'>
         <pose>-8.95042 4.91807 0 0 -0 1.57</pose>
         <link name='link'>
           <pose>-8.95042 4.91807 0 0 -0 1.57</pose>
@@ -805,7 +805,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='ycb_master_chef_can'>
+      <model name='master_chef_can'>
         <pose>-8.92005 4.70715 0.8415 0 -1e-06 1e-06</pose>
         <link name='link'>
           <pose>-8.92005 4.70715 0.8415 0 -1e-06 1e-06</pose>
@@ -821,7 +821,7 @@
         <view_controller>orbit</view_controller>
       </camera>
     </gui>
-    <model name='ycb_master_chef_can'>
+    <model name='master_chef_can'>
       <link name='link'>
         <inertial>
           <pose>0 0 0 0 -0 0</pose>
