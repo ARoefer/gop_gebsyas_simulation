@@ -1,0 +1,24 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+	<model name="pot_big">
+		<static>1</static>
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/pot_big.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collider">
+				<pose>0 0 0.084 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.99</radius>
+						<length>0.168</length>
+					</cylinder>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>

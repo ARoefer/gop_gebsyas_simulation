@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+	<model name="laptop">
+		<static>1</static>
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/laptop.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collider">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<!--cylinder>
+						<radius>0.035</radius>
+						<length>0.2</length>
+						<!size>0.086 0.091 0.053</size>
+					</cylinder-->
+					<mesh>
+						<uri>model://meshes/laptop_collider.stl</uri>
+					</mesh>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>

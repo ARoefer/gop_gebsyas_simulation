@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+	<model name="soap_dish">
+		<static>1</static>
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/soap_dish.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collider">
+				<pose>0 0 0.008 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.137 0.073 0.016</size>
+					</box>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>

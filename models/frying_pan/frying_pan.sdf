@@ -1,0 +1,24 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+	<model name="frying_pan">
+		<static>1</static>
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/frying_pan.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collider">
+				<pose>0 0 0.032 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.135</radius>
+						<length>0.064</length>
+					</cylinder>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>

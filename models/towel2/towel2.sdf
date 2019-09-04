@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+	<model name="towel2">
+		<static>1</static>
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/towel2.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collider">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.117 0.281 0.051</size>
+					</box>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>

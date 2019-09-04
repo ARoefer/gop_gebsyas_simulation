@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+	<model name="folder_open">
+		<static>1</static>
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/folder_open.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="box">
+				<pose>0 0 0.025 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.63 0.32 0.05</size>
+					</box>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>

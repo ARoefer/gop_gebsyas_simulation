@@ -1,0 +1,27 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+	<model name="milk_pot">
+		<static>1</static>
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/milk_pot.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collider">
+				<pose>0 0 0.06 0 0 0</pose>
+				<geometry>
+					<!--box>
+						<size>0.26 0.15 0.16</size>
+					</box-->
+					<cylinder>
+						<radius>0.04</radius>
+						<length>0.12</length>
+					</cylinder>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>

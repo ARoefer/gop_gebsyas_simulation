@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+	<model name="stove">
+		<static>1</static>
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/stove.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collider">
+				<pose>0 0 0.46 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.8 0.66 0.92</size>
+					</box>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>
