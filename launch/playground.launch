@@ -1,6 +1,6 @@
 <launch>
 
-  <env name="GAZEBO_MODEL_PATH" value="$(find fetch_gazebo)/models:$(find gop_gebsyas_simulation)/models/ycb_master_chef_can:$(optenv GAZEBO_MODEL_PATH)" />
+  <env name="GAZEBO_MODEL_PATH" value="$(find fetch_gazebo)/models:$(find gop_gebsyas_simulation)/models/ycb_master_chef_can:$(find gop_gebsyas_simulation)/models/ycb_master_chef_can:$(optenv GAZEBO_MODEL_PATH)" />
 
   <arg name="sdf_file" default="icra_room3.sdf" doc="World file to load. Must be located in gop_gebsyas_simulation/sdf"/>
   <arg name="robot" default="fetch"/>
