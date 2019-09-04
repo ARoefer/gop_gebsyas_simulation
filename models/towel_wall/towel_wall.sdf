@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+	<model name="towel_wall">
+		<static>1</static>
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/towel_wall.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+	</model>
+</sdf>

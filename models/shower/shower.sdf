@@ -1,20 +1,20 @@
 <?xml version='1.0'?>
 <sdf version="1.4">
-	<model name="night_light">
+	<model name="shower">
 		<static>1</static>
 		<link name="link">
 			<visual name="mesh">
 				<geometry>
 					<mesh>
-						<uri>model://meshes/night_light.dae</uri>
+						<uri>model://meshes/shower.dae</uri>
 					</mesh>
 				</geometry>
 			</visual>
-			<collision name="box">
-				<pose>0 0 0.16 0 0 0</pose>
+			<collision name="collider">
+				<pose>0 -0.28 1 0 0 0</pose>
 				<geometry>
 					<box>
-						<size>0.3 0.06 0.32</size>
+						<size>0.91 1.46 2</size>
 					</box>
 				</geometry>
 			</collision>

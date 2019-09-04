@@ -19,7 +19,7 @@
 						<!size>0.086 0.091 0.053</size>
 					</cylinder-->
 					<mesh>
-						<uri>model://meshes/laptop_collider.stl</uri>
+						<uri>model://meshes/laptop_collision.stl</uri>
 					</mesh>
 				</geometry>
 			</collision>
