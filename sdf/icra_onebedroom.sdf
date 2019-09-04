@@ -378,10 +378,10 @@
         <collision name='Wall_30_Collision'>
           <geometry>
             <box>
-              <size>3.75 0.15 2.5</size>
+              <size>3.45 0.15 2.5</size>
             </box>
           </geometry>
-          <pose frame=''>0 0 1.25 0 -0 0</pose>
+          <pose frame=''>0.4 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -397,10 +397,10 @@
           </surface>
         </collision>
         <visual name='Wall_30_Visual'>
-          <pose frame=''>0 0 1.25 0 -0 0</pose>
+          <pose frame=''>0.4 0 1.25 0 -0 0</pose>
           <geometry>
             <box>
-              <size>3.75 0.15 2.5</size>
+              <size>3.45 0.15 2.5</size>
             </box>
           </geometry>
           <material>
@@ -423,7 +423,7 @@
               <size>2.25 0.15 2.5</size>
             </box>
           </geometry>
-          <pose frame=''>0 0 1.25 0 -0 0</pose>
+          <pose frame=''>0.2 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -439,7 +439,7 @@
           </surface>
         </collision>
         <visual name='Wall_34_Visual'>
-          <pose frame=''>0 0 1.25 0 -0 0</pose>
+          <pose frame=''>0.2 0 1.25 0 -0 0</pose>
           <geometry>
             <box>
               <size>2.25 0.15 2.5</size>
@@ -1076,7 +1076,7 @@
         <pose frame=''>3 0.614386 0 0 -0 0</pose>
 
         <link name='link'>
-          <pose frame=''>3 0.614386 0 0 -0 0</pose>
+          <pose frame=''>3.3 0.614386 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
