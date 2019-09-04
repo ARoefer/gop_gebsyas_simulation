@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.80.75 commit date:2019-07-29, commit time:14:47, hash:f6cb5f54494e</authoring_tool>
     </contributor>
-    <created>2019-09-04T03:56:46</created>
-    <modified>2019-09-04T03:56:46</modified>
+    <created>2019-09-04T21:41:13</created>
+    <modified>2019-09-04T21:41:13</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -19,11 +19,11 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <color sid="diffuse">0.8 0.8 0.8 1</color>
+              <color sid="diffuse">0.1574337 0.06982744 0.03018867 1</color>
             </diffuse>
-            <reflectivity>
-              <float sid="specular">0.21875</float>
-            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
           </lambert>
         </technique>
       </profile_COMMON>
@@ -82,7 +82,7 @@
   <library_visual_scenes>
     <visual_scene id="Scene" name="Scene">
       <node id="Shelf2" name="Shelf2" type="NODE">
-        <matrix sid="transform">1 0 0 -0.2 0 1 0 0.15 0 0 1 0 0 0 0 1</matrix>
+        <matrix sid="transform">1 0 0 -0.1991312 0 1 0 0.1470337 0 0 1 0 0 0 0 1</matrix>
         <instance_geometry url="#Shelf2-mesh" name="Shelf2">
           <bind_material>
             <technique_common>

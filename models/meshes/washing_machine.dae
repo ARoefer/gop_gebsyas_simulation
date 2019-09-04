@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.80.75 commit date:2019-07-29, commit time:14:47, hash:f6cb5f54494e</authoring_tool>
     </contributor>
-    <created>2019-09-04T03:40:12</created>
-    <modified>2019-09-04T03:40:12</modified>
+    <created>2019-09-04T21:37:58</created>
+    <modified>2019-09-04T21:37:58</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -21,9 +21,9 @@
             <diffuse>
               <color sid="diffuse">0.8 0.8 0.8 1</color>
             </diffuse>
-            <reflectivity>
-              <float sid="specular">0.5</float>
-            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
           </lambert>
         </technique>
       </profile_COMMON>
@@ -36,11 +36,14 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <color sid="diffuse">0.8 0.8 0.8 1</color>
+              <color sid="diffuse">0.8293434 0.868805 0.9258256 1</color>
             </diffuse>
             <reflectivity>
-              <float sid="specular">0.9166666</float>
+              <float sid="specular">1</float>
             </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
           </lambert>
         </technique>
       </profile_COMMON>
@@ -55,9 +58,9 @@
             <diffuse>
               <color sid="diffuse">0.8 0.8 0.8 1</color>
             </diffuse>
-            <reflectivity>
-              <float sid="specular">0.5</float>
-            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
           </lambert>
         </technique>
       </profile_COMMON>

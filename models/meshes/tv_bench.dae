@@ -5,13 +5,13 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.80.75 commit date:2019-07-29, commit time:14:47, hash:f6cb5f54494e</authoring_tool>
     </contributor>
-    <created>2019-09-04T03:01:12</created>
-    <modified>2019-09-04T03:01:12</modified>
+    <created>2019-09-04T22:06:23</created>
+    <modified>2019-09-04T22:06:23</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
   <library_effects>
-    <effect id="TableWood-effect">
+    <effect id="Material_001-effect">
       <profile_COMMON>
         <technique sid="common">
           <lambert>
@@ -19,8 +19,11 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <color sid="diffuse">0.8 0.8 0.8 1</color>
+              <color sid="diffuse">0.004241899 0.004241899 0.004241899 1</color>
             </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
           </lambert>
         </technique>
       </profile_COMMON>
@@ -28,8 +31,8 @@
   </library_effects>
   <library_images/>
   <library_materials>
-    <material id="TableWood-material" name="TableWood">
-      <instance_effect url="#TableWood-effect"/>
+    <material id="Material_001-material" name="Material.001">
+      <instance_effect url="#Material_001-effect"/>
     </material>
   </library_materials>
   <library_geometries>
@@ -67,7 +70,7 @@
         <vertices id="TV_Bench-mesh-vertices">
           <input semantic="POSITION" source="#TV_Bench-mesh-positions"/>
         </vertices>
-        <triangles material="TableWood-material" count="164">
+        <triangles material="Material_001-material" count="164">
           <input semantic="VERTEX" source="#TV_Bench-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#TV_Bench-mesh-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#TV_Bench-mesh-map-0" offset="2" set="0"/>
@@ -83,7 +86,7 @@
         <instance_geometry url="#TV_Bench-mesh" name="TV_Bench">
           <bind_material>
             <technique_common>
-              <instance_material symbol="TableWood-material" target="#TableWood-material">
+              <instance_material symbol="Material_001-material" target="#Material_001-material">
                 <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
               </instance_material>
             </technique_common>

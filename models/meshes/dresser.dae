@@ -5,13 +5,36 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.80.75 commit date:2019-07-29, commit time:14:47, hash:f6cb5f54494e</authoring_tool>
     </contributor>
-    <created>2019-09-04T14:58:24</created>
-    <modified>2019-09-04T14:58:24</modified>
+    <created>2019-09-04T21:42:36</created>
+    <modified>2019-09-04T21:42:36</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
-  <library_effects/>
+  <library_effects>
+    <effect id="Some_Wood-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.01884868 0.01884868 0.01884868 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
   <library_images/>
+  <library_materials>
+    <material id="Some_Wood-material" name="Some Wood">
+      <instance_effect url="#Some_Wood-effect"/>
+    </material>
+  </library_materials>
   <library_geometries>
     <geometry id="dresser-mesh" name="dresser">
       <mesh>
@@ -47,7 +70,7 @@
         <vertices id="dresser-mesh-vertices">
           <input semantic="POSITION" source="#dresser-mesh-positions"/>
         </vertices>
-        <triangles count="124">
+        <triangles material="Some_Wood-material" count="124">
           <input semantic="VERTEX" source="#dresser-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#dresser-mesh-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#dresser-mesh-map-0" offset="2" set="0"/>
@@ -60,7 +83,15 @@
     <visual_scene id="Scene" name="Scene">
       <node id="Dresser" name="Dresser" type="NODE">
         <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
-        <instance_geometry url="#dresser-mesh" name="Dresser"/>
+        <instance_geometry url="#dresser-mesh" name="Dresser">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Some_Wood-material" target="#Some_Wood-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
       </node>
     </visual_scene>
   </library_visual_scenes>

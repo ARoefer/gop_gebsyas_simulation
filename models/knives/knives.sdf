@@ -14,7 +14,7 @@
 				<pose>0 0 0 0 0 0</pose>
 				<geometry>
 					<mesh>
-						<uri>model://meshes/knives.stl</uri>
+						<uri>model://meshes/knives_collision.stl</uri>
 					</mesh>
 				</geometry>
 			</collision>

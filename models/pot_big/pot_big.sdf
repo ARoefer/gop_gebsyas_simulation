@@ -14,7 +14,7 @@
 				<pose>0 0 0.084 0 0 0</pose>
 				<geometry>
 					<cylinder>
-						<radius>0.99</radius>
+						<radius>0.099</radius>
 						<length>0.168</length>
 					</cylinder>
 				</geometry>

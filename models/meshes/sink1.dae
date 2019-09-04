@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.80.75 commit date:2019-07-29, commit time:14:47, hash:f6cb5f54494e</authoring_tool>
     </contributor>
-    <created>2019-09-04T03:42:35</created>
-    <modified>2019-09-04T03:42:35</modified>
+    <created>2019-09-04T21:32:27</created>
+    <modified>2019-09-04T21:32:27</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -19,11 +19,14 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <color sid="diffuse">0.8 0.8 0.8 1</color>
+              <color sid="diffuse">0.8293434 0.868805 0.9258256 1</color>
             </diffuse>
             <reflectivity>
-              <float sid="specular">0.9166666</float>
+              <float sid="specular">1</float>
             </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
           </lambert>
         </technique>
       </profile_COMMON>
@@ -38,9 +41,9 @@
             <diffuse>
               <color sid="diffuse">0.8 0.8 0.8 1</color>
             </diffuse>
-            <reflectivity>
-              <float sid="specular">0.28125</float>
-            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
           </lambert>
         </technique>
       </profile_COMMON>
@@ -186,7 +189,7 @@
   <library_visual_scenes>
     <visual_scene id="Scene" name="Scene">
       <node id="Sink" name="Sink" type="NODE">
-        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0.06 0 0 0 1</matrix>
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0.06233709 0 0 0 1</matrix>
         <instance_geometry url="#Sink-mesh" name="Sink">
           <bind_material>
             <technique_common>
@@ -197,7 +200,7 @@
           </bind_material>
         </instance_geometry>
         <node id="Sink_Faucet" name="Sink_Faucet" type="NODE">
-          <matrix sid="transform">1 0 0 0.03272055 0 1 0 0.1263549 0 0 1 -0.005438864 0 0 0 1</matrix>
+          <matrix sid="transform">1 0 0 0.03272055 0 1 0 0.1263549 0 0 1 -0.005438976 0 0 0 1</matrix>
           <instance_geometry url="#Faucet-mesh" name="Sink_Faucet">
             <bind_material>
               <technique_common>
@@ -209,7 +212,7 @@
           </instance_geometry>
         </node>
         <node id="Sink_Plumming" name="Sink_Plumming" type="NODE">
-          <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 5.96046e-8 0 0 0 1</matrix>
+          <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 -5.21541e-8 0 0 0 1</matrix>
           <instance_geometry url="#Sink_Plumming-mesh" name="Sink_Plumming">
             <bind_material>
               <technique_common>

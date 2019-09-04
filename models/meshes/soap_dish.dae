@@ -5,13 +5,39 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.80.75 commit date:2019-07-29, commit time:14:47, hash:f6cb5f54494e</authoring_tool>
     </contributor>
-    <created>2019-09-04T03:52:40</created>
-    <modified>2019-09-04T03:52:40</modified>
+    <created>2019-09-04T21:36:05</created>
+    <modified>2019-09-04T21:36:05</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
-  <library_effects/>
+  <library_effects>
+    <effect id="Chrome-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.8293434 0.868805 0.9258256 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">1</float>
+            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
   <library_images/>
+  <library_materials>
+    <material id="Chrome-material" name="Chrome">
+      <instance_effect url="#Chrome-effect"/>
+    </material>
+  </library_materials>
   <library_geometries>
     <geometry id="Soap_Dish-mesh" name="Soap_Dish">
       <mesh>
@@ -47,7 +73,7 @@
         <vertices id="Soap_Dish-mesh-vertices">
           <input semantic="POSITION" source="#Soap_Dish-mesh-positions"/>
         </vertices>
-        <triangles count="216">
+        <triangles material="Chrome-material" count="216">
           <input semantic="VERTEX" source="#Soap_Dish-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Soap_Dish-mesh-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#Soap_Dish-mesh-map-0" offset="2" set="0"/>
@@ -60,7 +86,15 @@
     <visual_scene id="Scene" name="Scene">
       <node id="Soap_Dish" name="Soap_Dish" type="NODE">
         <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
-        <instance_geometry url="#Soap_Dish-mesh" name="Soap_Dish"/>
+        <instance_geometry url="#Soap_Dish-mesh" name="Soap_Dish">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Chrome-material" target="#Chrome-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
       </node>
     </visual_scene>
   </library_visual_scenes>

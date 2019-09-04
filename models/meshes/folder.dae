@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.80.75 commit date:2019-07-29, commit time:14:47, hash:f6cb5f54494e</authoring_tool>
     </contributor>
-    <created>2019-09-04T02:18:29</created>
-    <modified>2019-09-04T02:18:29</modified>
+    <created>2019-09-04T21:49:15</created>
+    <modified>2019-09-04T21:49:15</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -19,11 +19,11 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <color sid="diffuse">0.8 0.8 0.8 1</color>
+              <color sid="diffuse">0.7387952 0.7799703 0.9113927 1</color>
             </diffuse>
-            <reflectivity>
-              <float sid="specular">0.5</float>
-            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
           </lambert>
         </technique>
       </profile_COMMON>
@@ -38,9 +38,9 @@
             <diffuse>
               <color sid="diffuse">0.8 0.8 0.8 1</color>
             </diffuse>
-            <reflectivity>
-              <float sid="specular">0.5</float>
-            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
           </lambert>
         </technique>
       </profile_COMMON>
@@ -53,11 +53,11 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <color sid="diffuse">0.8 0.8 0.8 1</color>
+              <color sid="diffuse">0.8275568 0.04910873 0.007243383 1</color>
             </diffuse>
-            <reflectivity>
-              <float sid="specular">0.1979167</float>
-            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
           </lambert>
         </technique>
       </profile_COMMON>
@@ -196,7 +196,7 @@
   <library_visual_scenes>
     <visual_scene id="Scene" name="Scene">
       <node id="Folder1" name="Folder1" type="NODE">
-        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0.04 0 0 0 1</matrix>
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0.03741176 0 0 0 1</matrix>
         <instance_geometry url="#Folder-mesh" name="Folder1">
           <bind_material>
             <technique_common>
