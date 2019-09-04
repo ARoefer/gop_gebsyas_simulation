@@ -29,9 +29,7 @@
                 <mu>100</mu>
                 <mu2>50</mu2>
               </ode>
-
-                <ode/>
-
+              <ode/>
             </friction>
             <bounce/>
             <contact>
@@ -58,7 +56,10 @@
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <gravity>1</gravity>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
     </model>
     <physics type='ode'>
@@ -94,17 +95,13 @@
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
           <surface>
-            <contact>
-              <ode/>
-            </contact>
             <bounce/>
             <friction>
               <ode/>
-              <ode/>
-
-                <ode/>
-
             </friction>
+            <contact>
+              <ode/>
+            </contact>
           </surface>
         </collision>
         <visual name='Wall_12_Visual'>
@@ -123,10 +120,13 @@
           </material>
         </visual>
         <pose>-4.425 -0 0 0 -0 -1.5708</pose>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
         <self_collide>0</self_collide>
-        <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <gravity>1</gravity>
       </link>
       <link name='Wall_13'>
         <collision name='Wall_13_Collision'>
@@ -138,17 +138,13 @@
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
           <surface>
-            <contact>
-              <ode/>
-            </contact>
             <bounce/>
             <friction>
               <ode/>
-              <ode/>
-
-                <ode/>
-
             </friction>
+            <contact>
+              <ode/>
+            </contact>
           </surface>
         </collision>
         <visual name='Wall_13_Visual'>
@@ -167,10 +163,13 @@
           </material>
         </visual>
         <pose>-0 -3.925 0 0 -0 0</pose>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
         <self_collide>0</self_collide>
-        <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <gravity>1</gravity>
       </link>
       <link name='Wall_14'>
         <collision name='Wall_14_Collision'>
@@ -182,17 +181,13 @@
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
           <surface>
-            <contact>
-              <ode/>
-            </contact>
             <bounce/>
             <friction>
               <ode/>
-              <ode/>
-
-                <ode/>
-
             </friction>
+            <contact>
+              <ode/>
+            </contact>
           </surface>
         </collision>
         <visual name='Wall_14_Visual'>
@@ -211,10 +206,13 @@
           </material>
         </visual>
         <pose>4.425 -0 0 0 -0 1.5708</pose>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
         <self_collide>0</self_collide>
-        <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <gravity>1</gravity>
       </link>
       <link name='Wall_15'>
         <collision name='Wall_15_Collision'>
@@ -226,17 +224,13 @@
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
           <surface>
-            <contact>
-              <ode/>
-            </contact>
             <bounce/>
             <friction>
               <ode/>
-              <ode/>
-
-                <ode/>
-
             </friction>
+            <contact>
+              <ode/>
+            </contact>
           </surface>
         </collision>
         <visual name='Wall_15_Visual'>
@@ -255,39 +249,38 @@
           </material>
         </visual>
         <pose>-0 3.925 0 0 -0 3.14159</pose>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
         <self_collide>0</self_collide>
-        <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <gravity>1</gravity>
       </link>
       <link name='Wall_20'>
         <collision name='Wall_20_Collision'>
           <geometry>
             <box>
-              <size>1.7 0.15 2.5</size>
+              <size>2 0.15 2.5</size>
             </box>
           </geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
           <surface>
-            <contact>
-              <ode/>
-            </contact>
             <bounce/>
             <friction>
               <ode/>
-              <ode/>
-
-                <ode/>
-
             </friction>
+            <contact>
+              <ode/>
+            </contact>
           </surface>
         </collision>
         <visual name='Wall_20_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
           <geometry>
             <box>
-              <size>1.7 0.15 2.5</size>
+              <size>2 0.15 2.5</size>
             </box>
           </geometry>
           <material>
@@ -299,10 +292,13 @@
           </material>
         </visual>
         <pose>-3.5 0.225 0 0 -0 3.14159</pose>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
         <self_collide>0</self_collide>
-        <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <gravity>1</gravity>
       </link>
       <link name='Wall_23'>
         <collision name='Wall_23_Collision'>
@@ -314,17 +310,13 @@
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
           <surface>
-            <contact>
-              <ode/>
-            </contact>
             <bounce/>
             <friction>
               <ode/>
-              <ode/>
-
-                <ode/>
-
             </friction>
+            <contact>
+              <ode/>
+            </contact>
           </surface>
         </collision>
         <visual name='Wall_23_Visual'>
@@ -343,10 +335,13 @@
           </material>
         </visual>
         <pose>-1.225 2.025 0 0 -0 1.5708</pose>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
         <self_collide>0</self_collide>
-        <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <gravity>1</gravity>
       </link>
       <link name='Wall_25'>
         <collision name='Wall_25_Collision'>
@@ -358,17 +353,13 @@
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
           <surface>
-            <contact>
-              <ode/>
-            </contact>
             <bounce/>
             <friction>
               <ode/>
-              <ode/>
-
-                <ode/>
-
             </friction>
+            <contact>
+              <ode/>
+            </contact>
           </surface>
         </collision>
         <visual name='Wall_25_Visual'>
@@ -387,39 +378,38 @@
           </material>
         </visual>
         <pose>-1.05 0.225 0 0 -0 0</pose>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
         <self_collide>0</self_collide>
-        <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <gravity>1</gravity>
       </link>
       <link name='Wall_30'>
         <collision name='Wall_30_Collision'>
           <geometry>
             <box>
-              <size>3.45 0.15 2.5</size>
+              <size>4.25 0.15 2.5</size>
             </box>
           </geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
           <surface>
-            <contact>
-              <ode/>
-            </contact>
             <bounce/>
             <friction>
               <ode/>
-              <ode/>
-
-                <ode/>
-
             </friction>
+            <contact>
+              <ode/>
+            </contact>
           </surface>
         </collision>
         <visual name='Wall_30_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
           <geometry>
             <box>
-              <size>3.45 0.15 2.5</size>
+              <size>4.25 0.15 2.5</size>
             </box>
           </geometry>
           <material>
@@ -430,40 +420,39 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>2.675 0.225 0 0 -0 0</pose>
+        <pose>2.275 0.225 0 0 -0 0</pose>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
         <self_collide>0</self_collide>
-        <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <gravity>1</gravity>
       </link>
       <link name='Wall_34'>
         <collision name='Wall_34_Collision'>
           <geometry>
             <box>
-              <size>2.25 0.15 2.5</size>
+              <size>2.75 0.15 2.5</size>
             </box>
           </geometry>
-          <pose>0.2 0 1.25 0 -0 0</pose>
+          <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
           <surface>
-            <contact>
-              <ode/>
-            </contact>
             <bounce/>
             <friction>
               <ode/>
-              <ode/>
-
-                <ode/>
-
             </friction>
+            <contact>
+              <ode/>
+            </contact>
           </surface>
         </collision>
         <visual name='Wall_34_Visual'>
-          <pose>0.2 0 1.25 0 -0 0</pose>
+          <pose>0 0 1.25 0 -0 0</pose>
           <geometry>
             <box>
-              <size>2.25 0.15 2.5</size>
+              <size>2.75 0.15 2.5</size>
             </box>
           </geometry>
           <material>
@@ -475,20 +464,22 @@
           </material>
         </visual>
         <pose>-2.575 2.625 0 0 -0 1.5708</pose>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
         <self_collide>0</self_collide>
-        <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <gravity>1</gravity>
       </link>
       <static>1</static>
     </model>
     <state world_name='default'>
-      <sim_time>7083 160000000</sim_time>
-      <real_time>983 694675859</real_time>
-      <wall_time>1567625380 680268320</wall_time>
+      <sim_time>7124 65000000</sim_time>
+      <real_time>49 126737352</real_time>
+      <wall_time>1567634570 298275903</wall_time>
       <model name='barsoap'>
         <pose>-1.22733 -2.29391 0.826816 0 0 -0.112423</pose>
-
         <link name='link'>
           <pose>-1.22733 -2.29391 0.826816 0 0 -0.112423</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -498,7 +489,6 @@
       </model>
       <model name='bathroom_shelf1'>
         <pose>-1.72645 -2.1724 0 0 -0 0</pose>
-
         <link name='link'>
           <pose>-1.72645 -2.1724 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -508,7 +498,6 @@
       </model>
       <model name='bed'>
         <pose>-1.68082 1.69035 0 0 -0 1.5708</pose>
-
         <link name='link'>
           <pose>-1.68082 1.69035 0 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -518,7 +507,6 @@
       </model>
       <model name='bluray'>
         <pose>2.48345 -1.93831 0.471747 0 -0 0.456145</pose>
-
         <link name='link'>
           <pose>2.48345 -1.93831 0.471747 0 -0 0.456145</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -528,7 +516,6 @@
       </model>
       <model name='bluray_clone'>
         <pose>2.46283 -1.93996 0.456237 0 -0 0</pose>
-
         <link name='link'>
           <pose>2.46283 -1.93996 0.456237 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -538,7 +525,6 @@
       </model>
       <model name='book1'>
         <pose>4.73321 1.89529 1.48592 -1.5708 0 0</pose>
-
         <link name='link'>
           <pose>4.73321 1.89529 1.48592 -1.5708 0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -548,7 +534,6 @@
       </model>
       <model name='book2'>
         <pose>4.71652 1.87261 1.52852 1.5708 -0 0</pose>
-
         <link name='link'>
           <pose>4.71652 1.87261 1.52852 1.5708 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -558,7 +543,6 @@
       </model>
       <model name='book2_clone'>
         <pose>4.72788 1.78604 1.52503 1.5708 -0 0</pose>
-
         <link name='link'>
           <pose>4.72788 1.78604 1.52503 1.5708 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -568,7 +552,6 @@
       </model>
       <model name='book3'>
         <pose>4.72683 1.84277 1.48124 1.5708 -0 0</pose>
-
         <link name='link'>
           <pose>4.72683 1.84277 1.48124 1.5708 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -578,7 +561,6 @@
       </model>
       <model name='book3_clone'>
         <pose>4.73921 1.75727 1.48124 1.5708 -0 0</pose>
-
         <link name='link'>
           <pose>4.73921 1.75727 1.48124 1.5708 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -588,7 +570,6 @@
       </model>
       <model name='book3_clone_0'>
         <pose>4.73546 1.73203 1.48124 1.5708 -0 0</pose>
-
         <link name='link'>
           <pose>4.73546 1.73203 1.48124 1.5708 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -598,7 +579,6 @@
       </model>
       <model name='book4'>
         <pose>4.70444 1.81743 1.44146 1.5708 -0 0</pose>
-
         <link name='link'>
           <pose>4.70444 1.81743 1.44146 1.5708 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -608,7 +588,6 @@
       </model>
       <model name='book4_clone'>
         <pose>4.70242 1.71156 1.44146 1.5708 -0 0</pose>
-
         <link name='link'>
           <pose>4.70242 1.71156 1.44146 1.5708 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -618,7 +597,6 @@
       </model>
       <model name='coffee_machine'>
         <pose>2.9297 6.08817 0.918779 0 -0 0</pose>
-
         <link name='link'>
           <pose>2.9297 6.08817 0.918779 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -628,7 +606,6 @@
       </model>
       <model name='coffee_pot'>
         <pose>2.9355 6.09004 0.960007 0 -0 0.387948</pose>
-
         <link name='link'>
           <pose>2.9355 6.09004 0.960007 0 -0 0.387948</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -638,7 +615,6 @@
       </model>
       <model name='cup'>
         <pose>3.56031 5.97388 0.922223 0 -0 0</pose>
-
         <link name='link'>
           <pose>3.56031 5.97388 0.922223 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -648,7 +624,6 @@
       </model>
       <model name='cup_clone'>
         <pose>3.31909 6.07227 0.922223 0 -0 0</pose>
-
         <link name='link'>
           <pose>3.31909 6.07227 0.922223 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -658,7 +633,6 @@
       </model>
       <model name='cup_clone_clone'>
         <pose>3.32604 6.07413 0.96566 0 -0.257538 -0.322076</pose>
-
         <link name='link'>
           <pose>3.32604 6.07413 0.96566 0 -0.257538 -0.322076</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -668,7 +642,6 @@
       </model>
       <model name='desk'>
         <pose>-1.06976 5.95101 0 0 -0 0</pose>
-
         <link name='link'>
           <pose>-1.06976 5.95101 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -678,7 +651,6 @@
       </model>
       <model name='desk_lamp'>
         <pose>-0.434237 6.15029 0.725892 0 0 -0.977312</pose>
-
         <link name='link'>
           <pose>-0.434237 6.15029 0.725892 0 0 -0.977312</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -688,7 +660,6 @@
       </model>
       <model name='dresser'>
         <pose>-2.61719 4.02642 0 0 -0 1.5708</pose>
-
         <link name='link'>
           <pose>-2.61719 4.02642 0 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -698,7 +669,6 @@
       </model>
       <model name='floor_unit_narrow1'>
         <pose>2.99677 6.05346 0 0 -0 0</pose>
-
         <link name='link'>
           <pose>2.99677 6.05346 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -708,7 +678,6 @@
       </model>
       <model name='floor_unit_narrow1_0'>
         <pose>4.55819 3.79696 0 0 0 -1.5708</pose>
-
         <link name='link'>
           <pose>4.55819 3.79696 0 0 0 -1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -718,7 +687,6 @@
       </model>
       <model name='floor_unit_sink'>
         <pose>4.54962 4.49747 0 0 0 -1.5708</pose>
-
         <link name='link'>
           <pose>4.54962 4.49747 0 0 0 -1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -728,7 +696,6 @@
       </model>
       <model name='floor_unit_wide'>
         <pose>4.55144 5.29738 0 0 0 -1.5708</pose>
-
         <link name='link'>
           <pose>4.55144 5.29738 0 0 0 -1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -738,29 +705,26 @@
       </model>
       <model name='floor_unit_wide_0'>
         <pose>3.69685 6.05771 0 0 -0 0</pose>
-
         <link name='link'>
-          <pose>3.69685 6.05771 -0 0 -0 0</pose>
+          <pose>3.69685 6.05771 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='folder'>
-        <pose>-1.65065 5.92096 0.882314 1.5708 0 2.18905</pose>
-
+        <pose>-1.65065 5.92096 0.882314 1.5708 5.55112e-17 2.18905</pose>
         <link name='link'>
-          <pose>-1.65065 5.92096 0.882314 1.5708 0 2.18905</pose>
+          <pose>-1.65065 5.92096 0.882314 1.5708 5.55112e-17 2.18905</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='folder_clone'>
-        <pose>-1.73233 5.89193 0.882314 1.5708 0 2.18905</pose>
-
+        <pose>-1.73233 5.89193 0.882314 1.5708 5.55112e-17 2.18905</pose>
         <link name='link'>
-          <pose>-1.73233 5.89193 0.882314 1.5708 0 2.18905</pose>
+          <pose>-1.73233 5.89193 0.882314 1.5708 5.55112e-17 2.18905</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -768,7 +732,6 @@
       </model>
       <model name='folder_open'>
         <pose>-0.555025 5.83603 0.731065 0 0 -0.177012</pose>
-
         <link name='link'>
           <pose>-0.555025 5.83603 0.731065 0 0 -0.177012</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -778,7 +741,6 @@
       </model>
       <model name='fridge'>
         <pose>2.19767 5.9753 0 0 -0 0</pose>
-
         <link name='link'>
           <pose>2.19767 5.9753 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -788,7 +750,6 @@
       </model>
       <model name='frying_pan'>
         <pose>4.39972 2.90003 0.95302 0 0 -2.12584</pose>
-
         <link name='link'>
           <pose>4.39972 2.90003 0.95302 0 0 -2.12584</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -798,7 +759,6 @@
       </model>
       <model name='glass'>
         <pose>3.41165 6.15206 0.918146 0 -0 0</pose>
-
         <link name='link'>
           <pose>3.41165 6.15206 0.918146 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -808,7 +768,6 @@
       </model>
       <model name='glass_clone'>
         <pose>3.45215 6.26601 1.02112 0 -0 0</pose>
-
         <link name='link'>
           <pose>3.45215 6.26601 1.02112 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -818,7 +777,6 @@
       </model>
       <model name='glass_clone_0'>
         <pose>3.45117 6.26738 0.918146 0 -0 0</pose>
-
         <link name='link'>
           <pose>3.45117 6.26738 0.918146 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -828,7 +786,6 @@
       </model>
       <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>
-
         <link name='link'>
           <pose>0 0 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -838,7 +795,6 @@
       </model>
       <model name='knives'>
         <pose>4.71227 3.67614 0.881042 0 0 -1.86308</pose>
-
         <link name='link'>
           <pose>4.71227 3.67614 0.881042 0 0 -1.86308</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -848,7 +804,6 @@
       </model>
       <model name='laptop'>
         <pose>-1.09837 5.96236 0.730962 0 -0 0</pose>
-
         <link name='link'>
           <pose>-1.09837 5.96236 0.730962 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -858,7 +813,6 @@
       </model>
       <model name='livingroom_table'>
         <pose>4.45218 -0.825608 0 0 -0 1.5708</pose>
-
         <link name='link'>
           <pose>4.45218 -0.825608 0 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -868,7 +822,6 @@
       </model>
       <model name='milk_pot'>
         <pose>3.20975 6.21746 0.919065 0 -0 3.13042</pose>
-
         <link name='link'>
           <pose>3.20975 6.21746 0.919065 0 -0 3.13042</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -878,7 +831,6 @@
       </model>
       <model name='night_light'>
         <pose>-2.64806 2.74254 0.378883 0 0 -1.5708</pose>
-
         <link name='link'>
           <pose>-2.64806 2.74254 0.378883 0 0 -1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -888,7 +840,6 @@
       </model>
       <model name='night_stand'>
         <pose>-2.53959 2.75425 0 0 -0 1.5708</pose>
-
         <link name='link'>
           <pose>-2.53959 2.75425 0 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -898,7 +849,6 @@
       </model>
       <model name='office_chair'>
         <pose>-1.3345 5.40941 0 0 0 -0.253782</pose>
-
         <link name='link'>
           <pose>-1.3345 5.40941 0 0 0 -0.253782</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -908,9 +858,8 @@
       </model>
       <model name='one_bedroom'>
         <pose>0.994653 2.00685 0 0 -0 1.5708</pose>
-
         <link name='Wall_12'>
-          <pose>0.994652 -2.41815 0.0 0 0 -4e-06</pose>
+          <pose>0.994652 -2.41815 0 0 0 -4e-06</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -922,7 +871,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_14'>
-          <pose>0.994652 6.43185 0 0 0 -3.14159</pose>
+          <pose>0.994655 6.43185 0 0 0 -3.14159</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -934,31 +883,31 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_20'>
-          <pose>0.769652 -1.64315 0 0 0 -1.5708</pose>
+          <pose>0.769652 -1.49315 0 0 0 -1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_23'>
-          <pose>-1.03035 0.781853 0 0 0 -3.14159</pose>
+          <pose>-1.03035 0.781851 0 0 0 -3.14159</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_25'>
-          <pose>0.769652 0.956853 0 0 -0 1.5708</pose>
+          <pose>0.769653 0.95685 0 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_30'>
-          <pose>1.01965 4.68185 1.0 0 -0 1.5708</pose>
+          <pose>0.769654 4.28185 0 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_34'>
-          <pose>-1.88035 -0.568147 0 0 0 -3.14159</pose>
+          <pose>-1.63035 -0.568149 0 0 0 -3.14159</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -966,7 +915,6 @@
       </model>
       <model name='pencil_jar'>
         <pose>-1.36135 5.9995 0.728069 0 -0 0</pose>
-
         <link name='link'>
           <pose>-1.36135 5.9995 0.728069 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -976,9 +924,8 @@
       </model>
       <model name='phone1'>
         <pose>2.20566 -2.00089 0.557711 0 0 -3.09985</pose>
-
         <link name='link'>
-          <pose>2.20566 -2.00089 0.557711 0 -0 -3.09985</pose>
+          <pose>2.20566 -2.00089 0.557711 0 0 -3.09985</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -986,7 +933,6 @@
       </model>
       <model name='phone_base'>
         <pose>2.20297 -2.00618 0.450192 0 0 -3.10578</pose>
-
         <link name='link'>
           <pose>2.20297 -2.00618 0.450192 0 0 -3.10578</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -996,7 +942,6 @@
       </model>
       <model name='photo_frame'>
         <pose>4.74177 2.15291 1.34385 0 0 -0.940895</pose>
-
         <link name='link'>
           <pose>4.74177 2.15291 1.34385 0 0 -0.940895</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1006,7 +951,6 @@
       </model>
       <model name='photo_frame_clone'>
         <pose>-2.64073 4.41698 1.00099 0 -0 0.717325</pose>
-
         <link name='link'>
           <pose>-2.64073 4.41698 1.00099 0 -0 0.717325</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1016,7 +960,6 @@
       </model>
       <model name='plate'>
         <pose>3.80658 6.19045 0.932454 0 -0 0</pose>
-
         <link name='link'>
           <pose>3.80658 6.19045 0.932454 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1026,7 +969,6 @@
       </model>
       <model name='plate_clone'>
         <pose>3.80437 6.18869 0.922286 0 -0 0</pose>
-
         <link name='link'>
           <pose>3.80437 6.18869 0.922286 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1036,7 +978,6 @@
       </model>
       <model name='pot_big'>
         <pose>4.66971 3.32044 0.941382 0 -0 0</pose>
-
         <link name='link'>
           <pose>4.66971 3.32044 0.941382 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1046,7 +987,6 @@
       </model>
       <model name='puncher'>
         <pose>-1.50576 6.10326 0.734248 0 0 -1.25155</pose>
-
         <link name='link'>
           <pose>-1.50576 6.10326 0.734248 0 0 -1.25155</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1056,7 +996,6 @@
       </model>
       <model name='saucer'>
         <pose>3.55927 5.97236 0.922963 0 -0 0</pose>
-
         <link name='link'>
           <pose>3.55927 5.97236 0.922963 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1066,7 +1005,6 @@
       </model>
       <model name='shelf'>
         <pose>4.85374 1.82731 1.3508 0 0 -1.5708</pose>
-
         <link name='link'>
           <pose>4.85374 1.82731 1.3508 0 0 -1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1076,7 +1014,6 @@
       </model>
       <model name='sink1'>
         <pose>-1.06291 -2.16402 0.757962 0 -0 3.14159</pose>
-
         <link name='link'>
           <pose>-1.06291 -2.16402 0.757962 0 -0 3.14159</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1086,7 +1023,6 @@
       </model>
       <model name='soap_dish'>
         <pose>-1.22929 -2.29386 0.808214 0 0 -0.177153</pose>
-
         <link name='link'>
           <pose>-1.22929 -2.29386 0.808214 0 0 -0.177153</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1095,8 +1031,7 @@
         </link>
       </model>
       <model name='sofa'>
-        <pose>3 0.614386 0 0 -0 0</pose>
-
+        <pose>3.3 0.614386 0 0 -0 0</pose>
         <link name='link'>
           <pose>3.3 0.614386 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1106,7 +1041,6 @@
       </model>
       <model name='soup_plate'>
         <pose>3.80924 6.19662 0.933398 0 -0 0</pose>
-
         <link name='link'>
           <pose>3.80924 6.19662 0.933398 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1116,7 +1050,6 @@
       </model>
       <model name='speaker'>
         <pose>1.68159 -1.94991 0 0 -0 3.14159</pose>
-
         <link name='link'>
           <pose>1.68159 -1.94991 0 0 -0 3.14159</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1126,7 +1059,6 @@
       </model>
       <model name='speaker_0'>
         <pose>4.26171 -2.07647 0 0 0 -3.14159</pose>
-
         <link name='link'>
           <pose>4.26171 -2.07647 0 0 0 -3.14159</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1136,7 +1068,6 @@
       </model>
       <model name='stove'>
         <pose>4.53205 3.08776 0 0 0 -1.5708</pose>
-
         <link name='link'>
           <pose>4.53205 3.08776 0 0 0 -1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1146,7 +1077,6 @@
       </model>
       <model name='sugar_pot'>
         <pose>3.19443 6.12675 0.915906 0 -0 0</pose>
-
         <link name='link'>
           <pose>3.19443 6.12675 0.915906 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1156,7 +1086,6 @@
       </model>
       <model name='toaster'>
         <pose>4.73777 5.34826 0.918763 0 -0 1.5708</pose>
-
         <link name='link'>
           <pose>4.73777 5.34826 0.918763 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1166,7 +1095,6 @@
       </model>
       <model name='toilet'>
         <pose>-1.24296 -0.926138 0 0 -0 0</pose>
-
         <link name='link'>
           <pose>-1.24296 -0.926138 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1176,7 +1104,6 @@
       </model>
       <model name='toilet_paper'>
         <pose>-1.77781 -2.1372 0.47572 0 -0 0.394125</pose>
-
         <link name='link'>
           <pose>-1.77781 -2.1372 0.47572 0 -0 0.394125</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1186,7 +1113,6 @@
       </model>
       <model name='toilet_paper_clone'>
         <pose>-1.85676 -2.22792 0.47572 0 0 -0.085336</pose>
-
         <link name='link'>
           <pose>-1.85676 -2.22792 0.47572 0 0 -0.085336</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1196,7 +1122,6 @@
       </model>
       <model name='towel1'>
         <pose>-1.71501 -2.16852 0.253095 0 -0 0</pose>
-
         <link name='link'>
           <pose>-1.71501 -2.16852 0.253095 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1206,7 +1131,6 @@
       </model>
       <model name='towel2'>
         <pose>-1.63495 -2.18003 0.446719 0 -0 0</pose>
-
         <link name='link'>
           <pose>-1.63495 -2.18003 0.446719 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1216,7 +1140,6 @@
       </model>
       <model name='towel_wall'>
         <pose>-2.83597 -1.91151 1.64923 0 -0 1.5708</pose>
-
         <link name='link'>
           <pose>-2.83597 -1.91151 1.64923 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1225,10 +1148,9 @@
         </link>
       </model>
       <model name='towel_wall_clone'>
-        <pose>-0.387127 -2.32188 1.64923 0 -0 -3.14159</pose>
-
+        <pose>-0.387127 -2.32188 1.64923 0 0 -3.14159</pose>
         <link name='link'>
-          <pose>-0.387127 -2.32188 1.64923 0 -0 -3.14159</pose>
+          <pose>-0.387127 -2.32188 1.64923 0 0 -3.14159</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -1236,7 +1158,6 @@
       </model>
       <model name='tv'>
         <pose>2.95519 -1.9806 0.441594 0 0 -3.14159</pose>
-
         <link name='link'>
           <pose>2.95519 -1.9806 0.441594 0 0 -3.14159</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1246,7 +1167,6 @@
       </model>
       <model name='tv_bench'>
         <pose>3 -2 0 0 -0 0</pose>
-
         <link name='link'>
           <pose>3 -2 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1256,7 +1176,6 @@
       </model>
       <model name='washing_machine'>
         <pose>1.24643 5.98016 0 0 -0 0</pose>
-
         <link name='link'>
           <pose>1.24643 5.98016 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1266,7 +1185,6 @@
       </model>
       <model name='wine_glass'>
         <pose>4.38429 -0.444951 0.447369 0 -0 0</pose>
-
         <link name='link'>
           <pose>4.38429 -0.444951 0.447369 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1276,7 +1194,6 @@
       </model>
       <model name='wine_glass_clone'>
         <pose>4.37858 -0.539012 0.447369 0 -0 0</pose>
-
         <link name='link'>
           <pose>4.37858 -0.539012 0.447369 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1286,7 +1203,6 @@
       </model>
       <model name='wine_glass_clone_0'>
         <pose>4.27045 -0.498627 0.447369 0 -0 0</pose>
-
         <link name='link'>
           <pose>4.27045 -0.498627 0.447369 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1297,7 +1213,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>0.326431 -1.0022 14.8357 0 1.31779 0.923273</pose>
+        <pose>1.85578 -1.63734 21.7921 0 1.3898 1.36327</pose>
         <view_controller>orbit</view_controller>
       </camera>
     </gui>
@@ -1327,16 +1243,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>3 -2 0 0 -0 0</pose>
     </model>
@@ -1366,16 +1283,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>2.95519 -1.23302 0 0 -0 0</pose>
     </model>
@@ -1405,16 +1323,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>1.68159 -1.94991 0 0 -0 0</pose>
     </model>
@@ -1444,16 +1363,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.26171 -2.07647 0 0 -0 0</pose>
     </model>
@@ -1483,16 +1403,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>2.97194 -0.000723 0 0 -0 0</pose>
     </model>
@@ -1522,16 +1443,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-1.09906 2.62044 0 0 -0 0</pose>
     </model>
@@ -1561,9 +1483,7 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
@@ -1583,9 +1503,7 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
@@ -1605,16 +1523,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-1.06976 5.95101 0 0 -0 0</pose>
     </model>
@@ -1644,9 +1563,7 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
@@ -1666,16 +1583,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-1.16534 5.38649 0 0 -0 0</pose>
     </model>
@@ -1705,16 +1623,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-1.06475 5.90853 0 0 -0 0</pose>
     </model>
@@ -1731,7 +1650,10 @@
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-0.029522 5.94649 0 0 -0 0</pose>
     </model>
@@ -1761,16 +1683,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-0.555025 5.75336 0 0 -0 0</pose>
     </model>
@@ -1800,16 +1723,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-0.819608 5.4078 0 0 -0 0</pose>
     </model>
@@ -1839,18 +1763,19 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
-      <pose>-1.72299 5.89857 0.882314 1.5708 0 2.18905</pose>
+      <pose>-1.72299 5.89857 0.882314 1.5708 5.55112e-17 2.18905</pose>
     </model>
     <model name='night_stand'>
       <static>1</static>
@@ -1878,16 +1803,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-2.53959 2.75425 0 0 -0 0</pose>
     </model>
@@ -1917,16 +1843,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>2.19767 5.9753 0 0 -0 0</pose>
     </model>
@@ -1956,16 +1883,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>3 6 0 0 -0 0</pose>
     </model>
@@ -1995,16 +1923,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.3757 4.17336 0 0 -0 0</pose>
     </model>
@@ -2034,16 +1963,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-2.54532 3.97185 0 0 -0 0</pose>
     </model>
@@ -2073,16 +2003,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>1.24643 5.98016 0 0 -0 0</pose>
     </model>
@@ -2112,16 +2043,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-1.24296 -1.04674 0 0 -0 0</pose>
     </model>
@@ -2151,16 +2083,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-1.08101 -2.15956 0 0 -0 0</pose>
     </model>
@@ -2190,16 +2123,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-1.89161 -2.23105 0 0 -0 0</pose>
     </model>
@@ -2229,16 +2163,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-1.28808 -2.10616 0 0 -0 0</pose>
     </model>
@@ -2268,16 +2203,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-1.70999 -2.0082 0 0 -0 0</pose>
     </model>
@@ -2307,16 +2243,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.57643 3.4422 0 0 -0 0</pose>
     </model>
@@ -2346,16 +2283,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.0108 5.115 0 0 -0 0</pose>
     </model>
@@ -2385,16 +2323,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>3.69224 6.05634 0 0 -0 0</pose>
     </model>
@@ -2424,9 +2363,7 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
@@ -2447,16 +2384,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>3.13375 5.92214 0 0 -0 0</pose>
     </model>
@@ -2487,16 +2425,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>2.9355 5.43147 0 0 -0 0</pose>
     </model>
@@ -2527,16 +2466,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>3.22067 5.49418 0 0 -0 0</pose>
     </model>
@@ -2567,16 +2507,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>3.45 6.26601 0.918146 0 -0 0</pose>
     </model>
@@ -2607,16 +2548,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>3.45117 6.26738 0.918146 0 -0 0</pose>
     </model>
@@ -2647,16 +2589,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>2.96029 5.6234 0 0 -0 0</pose>
     </model>
@@ -2687,16 +2630,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>2.93486 5.42515 0 0 -0 0</pose>
     </model>
@@ -2726,16 +2670,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.45769 3.18458 0 0 -0 0</pose>
     </model>
@@ -2765,16 +2710,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>3.77779 -1.11329 0 0 -0 0</pose>
     </model>
@@ -2804,16 +2750,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>2.19973 -1.71002 0 0 -0 0</pose>
     </model>
@@ -2843,16 +2790,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>2.37224 -1.56564 0 0 -0 0</pose>
     </model>
@@ -2882,16 +2830,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>0 4 0 0 -0 0</pose>
     </model>
@@ -2921,16 +2870,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.74177 1.72887 0 0 -0 0</pose>
     </model>
@@ -2960,16 +2910,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.56461 2.14937 0 0 -0 0</pose>
     </model>
@@ -2999,16 +2950,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.67223 1.82859 0 0 -0 0</pose>
     </model>
@@ -3038,16 +2990,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.31935 2.00615 0 0 -0 0</pose>
     </model>
@@ -3077,16 +3030,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.28539 1.63781 0 0 -0 0</pose>
     </model>
@@ -3116,16 +3070,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.73921 1.75727 1.48124 1.5708 -0 0</pose>
     </model>
@@ -3155,16 +3110,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.73546 1.73203 1.48124 1.5708 -0 0</pose>
     </model>
@@ -3194,16 +3150,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.70242 1.71156 1.44146 1.5708 -0 0</pose>
     </model>
@@ -3233,16 +3190,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.72788 1.78604 1.55652 1.5708 -0 0</pose>
     </model>
@@ -3273,16 +3231,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-0.917646 5.45517 0 0 -0 0</pose>
     </model>
@@ -3312,16 +3271,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-0.929181 5.4259 0 0 -0 0</pose>
     </model>
@@ -3351,16 +3311,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.07609 4.00708 0 0 -0 0</pose>
     </model>
@@ -3391,16 +3352,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.05959 3.68786 0 0 -0 0</pose>
     </model>
@@ -3431,16 +3393,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.00885 3.8514 0 0 -0 0</pose>
     </model>
@@ -3471,16 +3434,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>3.66875 5.46482 0 0 -0 0</pose>
     </model>
@@ -3511,16 +3475,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>3.80437 6.18869 0.922286 0 -0 0</pose>
     </model>
@@ -3551,16 +3516,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.19356 5.79249 0 0 -0 0</pose>
     </model>
@@ -3591,16 +3557,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.33636 5.97236 0 0 -0 0</pose>
     </model>
@@ -3631,16 +3598,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>3.31909 6.07227 0.922223 0 -0 0</pose>
     </model>
@@ -3671,16 +3639,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>3.43831 6.06694 0.922223 0 -0 0</pose>
     </model>
@@ -3711,16 +3680,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-2.20359 -1.84304 0 0 -0 0</pose>
     </model>
@@ -3751,16 +3721,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-2.257 -2.22792 0.47572 0 -0 0.394125</pose>
     </model>
@@ -3790,16 +3761,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-2.20919 -2.05164 0 0 -0 0</pose>
     </model>
@@ -3829,16 +3801,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-2.15683 -1.86965 0 0 -0 0</pose>
     </model>
@@ -3869,16 +3842,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>3.8007 5.35358 0 0 -0 0</pose>
     </model>
@@ -3908,16 +3882,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>2.64954 -1.62605 0 0 -0 0</pose>
     </model>
@@ -3947,16 +3922,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>2.46283 -1.93996 0.456237 0 -0 0</pose>
     </model>
@@ -3987,16 +3963,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.10238 -0.444951 0 0 -0 0</pose>
     </model>
@@ -4027,16 +4004,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.37858 -0.539012 0.447369 0 -0 0</pose>
     </model>
@@ -4067,16 +4045,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>4.27045 -0.498627 0.447369 0 -0 0</pose>
     </model>
@@ -4106,16 +4085,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-2.51412 4.23986 1.34385 0 0 -0.940895</pose>
     </model>
@@ -4145,16 +4125,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>-2.78541 4.97814 0 0 -0 0</pose>
     </model>
@@ -4184,16 +4165,17 @@
             <friction>
               <ode/>
               <ode/>
-
-                <ode/>
-
+              <ode/>
             </friction>
           </surface>
         </collision>
         <self_collide>0</self_collide>
         <gravity>1</gravity>
         <kinematic>0</kinematic>
-
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
       </link>
       <pose>3.72687 5.47658 0 0 -0 0</pose>
     </model>
@@ -4208,8 +4190,12 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-
         <kinematic>0</kinematic>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <gravity>1</gravity>
       </link>
       <pose>-2.30309 -1.52348 0 0 -0 0</pose>
     </model>
@@ -4224,8 +4210,12 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-
         <kinematic>0</kinematic>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <gravity>1</gravity>
       </link>
       <pose>-2.83569 -1.20518 1.64923 0 -0 1.5708</pose>
     </model>
