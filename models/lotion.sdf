@@ -1,0 +1,22 @@
+<sdf version="1.4">
+	<model name="lotion">
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/lotion.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collider">
+				<pose>0 0 0.015 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.04</radius>
+						<length>0.03</length>
+					</cylinder>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>

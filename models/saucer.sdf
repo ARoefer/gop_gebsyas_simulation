@@ -1,0 +1,22 @@
+<sdf version="1.4">
+	<model name="saucer">
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/saucer.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collider">
+				<pose>0 0 0.005 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.06</radius>
+						<length>0.01</length>
+					</cylinder>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>

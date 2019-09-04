@@ -1,0 +1,23 @@
+<sdf version="1.4">
+	<model name="livingroom_table">
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/livingroom_table.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collider">
+				<pose>0 0 0.225 0 0 0</pose>
+				<geometry>
+					<box>
+						<!--radius>0.035</radius>
+						<length>0.2</length-->
+						<size>1.4 0.78 0.45</size>
+					</box>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>

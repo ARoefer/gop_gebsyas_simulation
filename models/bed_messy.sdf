@@ -1,0 +1,21 @@
+<sdf version="1.4">
+	<model name="bed">
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/bed_messy.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="frame">
+				<pose>0 0 0.14 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>1.56 2.185 0.38</size>
+					</box>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>

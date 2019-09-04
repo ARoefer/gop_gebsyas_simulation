@@ -1,0 +1,43 @@
+<sdf version="1.4">
+	<model name="desk">
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/desk.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="top_collider">
+				<pose>0 0 0.71 0 0 0</pose>
+				<geometry>
+					<box>
+						<!--radius>0.035</radius>
+						<length>0.2</length-->
+						<size>1.8 0.75 0.04</size>
+					</box>
+				</geometry>
+			</collision>
+			<collision name="left_leg">
+				<pose>0.85 0 0.345 0 0 0</pose>
+				<geometry>
+					<box>
+						<!--radius>0.035</radius>
+						<length>0.2</length-->
+						<size>0.06 0.69 0.69</size>
+					</box>
+				</geometry>
+			</collision>
+			<collision name="right_leg">
+				<pose>-0.85 0 0.345 0 0 0</pose>
+				<geometry>
+					<box>
+						<!--radius>0.035</radius>
+						<length>0.2</length-->
+						<size>0.06 0.69 0.69</size>
+					</box>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>

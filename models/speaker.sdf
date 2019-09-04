@@ -1,0 +1,26 @@
+<sdf version="1.4">
+	<model name="speaker">
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/speaker.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collider">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://meshes/speaker_collision.stl</uri>
+					</mesh>
+					<!--box>
+						<radius>0.035</radius>
+						<length>0.2</length-->
+						<!--size>0.46 0.5 0.45</size>
+					</box-->
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>

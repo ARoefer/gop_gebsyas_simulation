@@ -1,0 +1,22 @@
+<sdf version="1.4">
+	<model name="wine_glass">
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/wine_glass.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collider">
+				<pose>0 0 0.1 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.035</radius>
+						<length>0.2</length>
+					</cylinder>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>

@@ -1,0 +1,23 @@
+<sdf version="1.4">
+	<model name="sofa">
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/sofa.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collider">
+				<pose>0 0 0.45 0 0 0</pose>
+				<geometry>
+					<box>
+						<!--radius>0.035</radius>
+						<length>0.2</length-->
+						<size>2.03 0.966 0.9</size>
+					</box>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>

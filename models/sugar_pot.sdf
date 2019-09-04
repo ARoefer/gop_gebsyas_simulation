@@ -1,0 +1,25 @@
+<sdf version="1.4">
+	<model name="sugar_pot">
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/sugar_pot.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collider">
+				<pose>0 0 0.035 0 0 0</pose>
+				<geometry>
+					<!--box>
+						<size>0.26 0.15 0.16</size>
+					</box-->
+					<cylinder>
+						<radius>0.055</radius>
+						<length>0.07</length>
+					</cylinder>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>

@@ -1,0 +1,22 @@
+<sdf version="1.4">
+	<model name="coffee_pot">
+		<link name="link">
+			<visual name="mesh">
+				<geometry>
+					<mesh>
+						<uri>model://meshes/coffee_pot.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="collider">
+				<pose>0 0 0.08 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.135</radius>
+						<length>0.16</length>
+					</cylinder>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>
