@@ -10,11 +10,11 @@
 					</mesh>
 				</geometry>
 			</visual>
-			<!--collision name="box">
-				<pose>0 0 0.16 0 0 0</pose>
+			<collision name="box">
+				<pose>0 0 0.2 0 0 0</pose>
 				<geometry>
 					<box>
-						<size>0.3 0.06 0.32</size>
+						<size>0.15 0.15 0.4</size>
 					</box>
 				</geometry>
 			</collision-->

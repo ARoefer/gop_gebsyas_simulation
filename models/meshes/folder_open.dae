@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.80.75 commit date:2019-07-29, commit time:14:47, hash:f6cb5f54494e</authoring_tool>
     </contributor>
-    <created>2019-09-04T02:15:25</created>
-    <modified>2019-09-04T02:15:25</modified>
+    <created>2019-09-04T21:47:40</created>
+    <modified>2019-09-04T21:47:40</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -21,9 +21,9 @@
             <diffuse>
               <color sid="diffuse">0.8 0.8 0.8 1</color>
             </diffuse>
-            <reflectivity>
-              <float sid="specular">0.5</float>
-            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
           </lambert>
         </technique>
       </profile_COMMON>
@@ -36,11 +36,11 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <color sid="diffuse">0.8 0.8 0.8 1</color>
+              <color sid="diffuse">0.7387952 0.7799703 0.9113927 1</color>
             </diffuse>
-            <reflectivity>
-              <float sid="specular">0.5</float>
-            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
           </lambert>
         </technique>
       </profile_COMMON>
@@ -53,11 +53,11 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <color sid="diffuse">0.8 0.8 0.8 1</color>
+              <color sid="diffuse">0.8275568 0.04910873 0.007243383 1</color>
             </diffuse>
-            <reflectivity>
-              <float sid="specular">0.1979167</float>
-            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
           </lambert>
         </technique>
       </profile_COMMON>
@@ -270,7 +270,7 @@
             </instance_geometry>
           </node>
           <node id="Folder_Open_PapersA" name="Folder_Open_PapersA" type="NODE">
-            <matrix sid="transform">1 0 0 0 2.3126e-16 1 0 0 -1.86265e-9 0 1 3.49246e-10 0 0 0 1</matrix>
+            <matrix sid="transform">1 0 0 0 2.3126e-16 1 0 0 -1.86265e-9 0 1 0 0 0 0 1</matrix>
             <instance_geometry url="#Folder_Papers_001-mesh" name="Folder_Open_PapersA">
               <bind_material>
                 <technique_common>
