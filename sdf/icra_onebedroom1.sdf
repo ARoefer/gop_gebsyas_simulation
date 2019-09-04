@@ -84,7 +84,6 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <model name='one_bedroom'>
-      <pose>-2.08383 -5.43112 0 0 -0 0</pose>
       <link name='Wall_12'>
         <collision name='Wall_12_Collision'>
           <geometry>
@@ -261,7 +260,7 @@
         <collision name='Wall_20_Collision'>
           <geometry>
             <box>
-              <size>2 0.15 2.5</size>
+              <size>1.7 0.15 2.5</size>
             </box>
           </geometry>
           <pose>0 0 1.25 0 -0 0</pose>
@@ -280,7 +279,7 @@
           <pose>0 0 1.25 0 -0 0</pose>
           <geometry>
             <box>
-              <size>2 0.15 2.5</size>
+              <size>1.7 0.15 2.5</size>
             </box>
           </geometry>
           <material>
@@ -291,7 +290,7 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-3.5 0.225 0 0 -0 3.14159</pose>
+        <pose>-3.65 0.225 0 0 -0 3.14159</pose>
         <velocity_decay>
           <linear>0</linear>
           <angular>0</angular>
@@ -390,7 +389,7 @@
         <collision name='Wall_30_Collision'>
           <geometry>
             <box>
-              <size>4.25 0.15 2.5</size>
+              <size>3.75 0.15 2.5</size>
             </box>
           </geometry>
           <pose>0 0 1.25 0 -0 0</pose>
@@ -409,7 +408,7 @@
           <pose>0 0 1.25 0 -0 0</pose>
           <geometry>
             <box>
-              <size>4.25 0.15 2.5</size>
+              <size>3.75 0.15 2.5</size>
             </box>
           </geometry>
           <material>
@@ -420,7 +419,7 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>2.275 0.225 0 0 -0 0</pose>
+        <pose>2.525 0.225 0 0 -0 0</pose>
         <velocity_decay>
           <linear>0</linear>
           <angular>0</angular>
@@ -433,7 +432,7 @@
         <collision name='Wall_34_Collision'>
           <geometry>
             <box>
-              <size>2.75 0.15 2.5</size>
+              <size>2.25 0.15 2.5</size>
             </box>
           </geometry>
           <pose>0 0 1.25 0 -0 0</pose>
@@ -452,7 +451,7 @@
           <pose>0 0 1.25 0 -0 0</pose>
           <geometry>
             <box>
-              <size>2.75 0.15 2.5</size>
+              <size>2.25 0.15 2.5</size>
             </box>
           </geometry>
           <material>
@@ -463,7 +462,7 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-2.575 2.625 0 0 -0 1.5708</pose>
+        <pose>-2.575 2.875 0 0 -0 1.5708</pose>
         <velocity_decay>
           <linear>0</linear>
           <angular>0</angular>
@@ -883,7 +882,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_20'>
-          <pose>0.769652 -1.49315 0 0 0 -1.5708</pose>
+          <pose>0.769652 -1.64315 0 0 0 -1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -901,13 +900,13 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_30'>
-          <pose>0.769654 4.28185 0 0 -0 1.5708</pose>
+          <pose>0.769654 4.53185 0 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_34'>
-          <pose>-1.63035 -0.568149 0 0 0 -3.14159</pose>
+          <pose>-1.880347 -0.568149 0 0 0 -3.14159</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
