@@ -549,9 +549,9 @@
       <static>1</static>
     </model>
     <state world_name='default'>
-      <sim_time>8787 301000000</sim_time>
-      <real_time>734 393705559</real_time>
-      <wall_time>1567655634 649819723</wall_time>
+      <sim_time>32547 723000000</sim_time>
+      <real_time>18 775774567</real_time>
+      <wall_time>1568009864 655532445</wall_time>
       <model name='barsoap'>
         <pose>0.837346 -8.682 0.826816 0 0 -0.112423</pose>
         <link name='link'>
@@ -612,7 +612,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_18'>
-          <pose>2.80127 0.306316 0 0 -0 1.5708</pose>
+          <pose>2.80127 0.306318 0 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -739,45 +739,27 @@
         </link>
       </model>
       <model name='coffee_machine'>
-        <pose>4.99324 2.02778 0.918779 0 -0 0</pose>
+        <pose>8.44516 0.192442 0.918779 0 0 -1.30609</pose>
         <link name='link'>
-          <pose>4.99324 2.02778 0.918779 0 -0 0</pose>
+          <pose>8.44516 0.192442 0.918779 0 0 -1.30609</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='coffee_pot'>
-        <pose>4.98049 2.03615 0.960007 0 -0 0.387948</pose>
+        <pose>8.46221 0.217245 0.960007 0 0 -0.651871</pose>
         <link name='link'>
-          <pose>4.98049 2.03615 0.960007 0 -0 0.387948</pose>
+          <pose>8.46221 0.217245 0.960007 0 0 -0.651871</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='mug'>
-        <pose>5.97153 2.16933 0.922223 0 -0 0</pose>
+      <model name='cup'>
+        <pose>8.48048 -0.63723 0.92704 0 -0 0</pose>
         <link name='link'>
-          <pose>5.97153 2.16933 0.922223 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='mug_clone'>
-        <pose>5.64698 1.86296 0.922223 0 -0 0</pose>
-        <link name='link'>
-          <pose>5.64698 1.86296 0.922223 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='mug_clone_clone'>
-        <pose>5.52892 1.80473 0.96566 0 -0.257538 -0.322076</pose>
-        <link name='link'>
-          <pose>5.52892 1.80473 0.96566 0 -0.257538 -0.322076</pose>
+          <pose>8.48048 -0.63723 0.92704 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -823,15 +805,6 @@
         <pose>8.58934 -1.18065 0 0 0 -1.5708</pose>
         <link name='link'>
           <pose>8.58934 -1.18065 0 0 0 -1.5708</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='sink1'>
-        <pose>8.59219 -0.482204 0 0 0 -1.5708</pose>
-        <link name='link'>
-          <pose>8.59219 -0.482204 0 0 0 -1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -900,15 +873,6 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='cup'>
-        <pose>5.64453 2.08632 0.918146 0 -0 0</pose>
-        <link name='link'>
-          <pose>5.64453 2.08632 0.918146 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
       <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>
         <link name='link'>
@@ -949,6 +913,33 @@
         <pose>5.24869 1.86882 0.919065 0 -0 3.13042</pose>
         <link name='link'>
           <pose>5.24869 1.86882 0.919065 0 -0 3.13042</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mug'>
+        <pose>5.97153 2.16933 0.922223 0 -0 0</pose>
+        <link name='link'>
+          <pose>5.97153 2.16933 0.922223 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mug_clone'>
+        <pose>5.64698 1.86296 0.922223 0 -0 0</pose>
+        <link name='link'>
+          <pose>5.64698 1.86296 0.922223 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mug_clone_clone'>
+        <pose>5.52892 1.80473 0.96566 0 -0.257538 -0.322076</pose>
+        <link name='link'>
+          <pose>5.52892 1.80473 0.96566 0 -0.257538 -0.322076</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -1080,6 +1071,15 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
+      <model name='sink1'>
+        <pose>8.59219 -0.482204 0 0 0 -1.5708</pose>
+        <link name='link'>
+          <pose>8.59219 -0.482204 0 0 0 -1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
       <model name='sink2'>
         <pose>0.992221 -8.5533 0.757962 0 -0 3.14159</pose>
         <link name='link'>
@@ -1153,9 +1153,9 @@
         </link>
       </model>
       <model name='toaster'>
-        <pose>8.69208 0.306168 0.918763 0 -0 1.5708</pose>
+        <pose>8.70981 0.518823 0.918763 0 -0 1.5708</pose>
         <link name='link'>
-          <pose>8.69208 0.306168 0.918763 0 -0 1.5708</pose>
+          <pose>8.70981 0.518823 0.918763 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -1251,37 +1251,10 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='wine_glass'>
-        <pose>7.6599 -7.08869 0.447369 0 -0 0</pose>
-        <link name='link'>
-          <pose>7.6599 -7.08869 0.447369 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='wine_glass_clone'>
-        <pose>7.997 -6.75519 0.447369 0 -0 0</pose>
-        <link name='link'>
-          <pose>7.997 -6.75519 0.447369 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='wine_glass_clone_0'>
-        <pose>7.68875 -6.51508 0.447369 0 -0 0</pose>
-        <link name='link'>
-          <pose>7.68875 -6.51508 0.447369 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>7.80967 -6.24104 27.3063 0 1.3498 1.83859</pose>
+        <pose>2.96261 -10.1568 14.8702 0 1.0418 1.63456</pose>
         <view_controller>orbit</view_controller>
       </camera>
     </gui>
@@ -3921,129 +3894,6 @@
         </velocity_decay>
       </link>
       <pose>2.46283 -1.93996 0.456237 0 -0 0</pose>
-    </model>
-    <model name='wine_glass'>
-      <static>1</static>
-      <link name='link'>
-        <visual name='mesh'>
-          <geometry>
-            <mesh>
-              <uri>model://meshes/wine_glass.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='collider'>
-          <pose>0 0 0.1 0 -0 0</pose>
-          <geometry>
-            <cylinder>
-              <radius>0.035</radius>
-              <length>0.2</length>
-            </cylinder>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <ode/>
-              <ode/>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <gravity>1</gravity>
-        <kinematic>0</kinematic>
-        <velocity_decay>
-          <linear>0</linear>
-          <angular>0</angular>
-        </velocity_decay>
-      </link>
-      <pose>4.10238 -0.444951 0 0 -0 0</pose>
-    </model>
-    <model name='wine_glass_clone'>
-      <static>1</static>
-      <link name='link'>
-        <visual name='mesh'>
-          <geometry>
-            <mesh>
-              <uri>model://meshes/wine_glass.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='collider'>
-          <pose>0 0 0.1 0 -0 0</pose>
-          <geometry>
-            <cylinder>
-              <radius>0.035</radius>
-              <length>0.2</length>
-            </cylinder>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <ode/>
-              <ode/>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <gravity>1</gravity>
-        <kinematic>0</kinematic>
-        <velocity_decay>
-          <linear>0</linear>
-          <angular>0</angular>
-        </velocity_decay>
-      </link>
-      <pose>4.37858 -0.539012 0.447369 0 -0 0</pose>
-    </model>
-    <model name='wine_glass_clone_0'>
-      <static>1</static>
-      <link name='link'>
-        <visual name='mesh'>
-          <geometry>
-            <mesh>
-              <uri>model://meshes/wine_glass.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='collider'>
-          <pose>0 0 0.1 0 -0 0</pose>
-          <geometry>
-            <cylinder>
-              <radius>0.035</radius>
-              <length>0.2</length>
-            </cylinder>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <ode/>
-              <ode/>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <gravity>1</gravity>
-        <kinematic>0</kinematic>
-        <velocity_decay>
-          <linear>0</linear>
-          <angular>0</angular>
-        </velocity_decay>
-      </link>
-      <pose>4.27045 -0.498627 0.447369 0 -0 0</pose>
     </model>
     <model name='photo_frame_clone'>
       <static>1</static>
