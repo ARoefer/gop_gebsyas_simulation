@@ -549,9 +549,9 @@
       <static>1</static>
     </model>
     <state world_name='default'>
-      <sim_time>63331 890000000</sim_time>
-      <real_time>42413 435985115</real_time>
-      <wall_time>1568059820 276318653</wall_time>
+      <sim_time>63364 795000000</sim_time>
+      <real_time>45 511245027</real_time>
+      <wall_time>1568068417 336373106</wall_time>
       <model name='barsoap'>
         <pose>0.837346 -8.682 0.826816 0 0 -0.112423</pose>
         <link name='link'>
@@ -892,9 +892,9 @@
         </link>
       </model>
       <model name='laptop'>
-        <pose>-0.242152 -3.49862 0.730962 0 -0 2.11214</pose>
+        <pose>0.106962 -3.35392 0.486249 0 -0 2.11214</pose>
         <link name='link'>
-          <pose>-0.242152 -3.49862 0.730962 0 -0 2.11214</pose>
+          <pose>0.106962 -3.35392 0.486249 0 -0 2.11214</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -1254,7 +1254,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>2.92147 -9.5632 24.9881 2.21773e-16 1.3178 1.58256</pose>
+        <pose>3.92409 -1.41495 6.93504 1.46617e-17 1.0778 -3.00863</pose>
         <view_controller>orbit</view_controller>
       </camera>
     </gui>

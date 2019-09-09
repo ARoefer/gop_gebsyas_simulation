@@ -59,7 +59,7 @@ def cb_model_states(states_msg):
         #print('{} {} {}\n{} {} {} {}'.format(trans[0], trans[1], trans[2], rot[0], rot[1], rot[2], rot[3]))
 
         camera_base_tf = tf_to_np(pb.Transform(pb.Quaternion(*rot), pb.Vector3(*trans)))
-        #fake_observation()
+        # fake_observation()
     except (ValueError, tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):
         pass
 
@@ -188,7 +188,9 @@ def fake_observation():
         aabb_max     = np.array([aabb_max[x] for x in range(3)] + [1])
         aabb_dim     = aabb_max - aabb_min
         aabb_corners = (aabb_vertex_template * aabb_dim + aabb_min + 0.5 * aabb_dim).T
+        aabb_center  = aabb_min + 0.5 * aabb_dim
         visualizer.draw_points('aabbs', pb.Transform.identity(), 0.05, aabb_corners.T.tolist())
+        visualizer.draw_cube('aabbs', pb.Transform(*aabb_center[:3]), pb.Vector3(*aabb_dim[:3]), g=1, a=0.5)
 
         corners_in_camera = i_camera_tf.dot(aabb_corners)
         projected_corners = projection_matrix.dot(corners_in_camera)
@@ -203,7 +205,7 @@ def fake_observation():
             pixel_bb_min = screen_translation.dot(screen_bb_min.clip(-1, 1))
             pixel_bb_max = screen_translation.dot(screen_bb_max.clip(-1, 1))
             print('Bounding box for object {}.\n  Min: {}\n  Max: {}'.format(inv_phy_obj[o], pixel_bb_min, pixel_bb_max))
-            bounding_boxes.append((i_camera_tf.dot(aabb_min + 0.5 * aabb_dim)[2], phy_to_label[o], pixel_bb_min, pixel_bb_max, aabb_min + 0.5 * aabb_dim))
+            bounding_boxes.append((i_camera_tf.dot(aabb_min + 0.5 * aabb_dim)[2], phy_to_label[o], pixel_bb_min, pixel_bb_max, aabb_center))
 
     min_box_width = 5
     visible_boxes = []
