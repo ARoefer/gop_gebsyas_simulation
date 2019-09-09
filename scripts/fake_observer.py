@@ -214,7 +214,7 @@ def fake_observation():
             rmin = vmin - bmin
             rmax = vmax - bmax
 
-            new_visible_boxes.append((vlabel, vmin, vmax, location))
+            new_visible_boxes.append((vlabel, vmin, vmax, vlocation))
 
             continue # AFTER THIS BOX CUTTING
 
