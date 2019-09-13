@@ -19,7 +19,7 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <color sid="diffuse">0.8 0.8 0.8 1</color>
+              <color sid="diffuse">0.41 0.61 0.99 1</color>
             </diffuse>
             <reflectivity>
               <float sid="specular">0.5</float>

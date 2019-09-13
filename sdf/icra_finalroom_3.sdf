@@ -14,13 +14,14 @@
       <direction>-0.5 0.1 -0.9</direction>
     </light>
     <model name='ground_plane'>
+      <pose>3.85 -3.2 0 0 0 0</pose>
       <static>1</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <plane>
               <normal>0 0 1</normal>
-              <size>100 100</size>
+              <size>10.3 11.5</size>
             </plane>
           </geometry>
           <surface>
@@ -43,14 +44,17 @@
           <geometry>
             <plane>
               <normal>0 0 1</normal>
-              <size>100 100</size>
+              <size>10.3 11.5</size>
             </plane>
           </geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
+              <name>Gazebo/NiceWoodFloor</name>
             </script>
+            <!--diffuse>0.8 0.69 0.54 1</diffuse-->
+            <!--ambient>0.2 0.18 0.1  1</ambient-->
+            <!--specular>1.0 1.0 1.0 1</specular-->
           </material>
         </visual>
         <self_collide>0</self_collide>
@@ -873,15 +877,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='ground_plane'>
-        <pose>0 0 0 0 -0 0</pose>
-        <link name='link'>
-          <pose>0 0 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
+
       <model name='knives'>
         <pose>8.70013 -1.15016 0.881042 0 0 -1.86308</pose>
         <link name='link'>
@@ -1267,6 +1263,12 @@
               <uri>model://meshes/tv_bench.dae</uri>
             </mesh>
           </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/FurnitureWood1</name>
+            </script>
+          </material>
         </visual>
         <collision name='collider'>
           <pose>0 0 0.225 0 -0 0</pose>
@@ -1427,6 +1429,12 @@
               <uri>model://meshes/sofa.dae</uri>
             </mesh>
           </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Fabric</name>
+            </script>
+          </material>
         </visual>
         <collision name='collider'>
           <pose>0 0 0.45 0 -0 0</pose>
@@ -1987,6 +1995,12 @@
               <uri>model://meshes/dresser.dae</uri>
             </mesh>
           </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/FurnitureWood1</name>
+            </script>
+          </material>
         </visual>
         <collision name='collider'>
           <pose>0 0 0.5 0 -0 0</pose>
@@ -2652,6 +2666,12 @@
               <uri>model://meshes/livingroom_table.dae</uri>
             </mesh>
           </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/FurnitureWood2</name>
+            </script>
+          </material>
         </visual>
         <collision name='collider'>
           <pose>0 0 0.225 0 -0 0</pose>
